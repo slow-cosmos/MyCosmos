@@ -19,7 +19,17 @@ public class StarDatabase : MonoBehaviour
 
     public stars_type[] star_Database = new stars_type[]
     {
-        new stars_type("Sirius", 6.752500f, -16.716101f, -1.460000f)
+        new stars_type("Sirius", 6.450891f, -16.425801f, -1.470000f),
+        new stars_type("Regulus", 10.195816f, 19.50307f,2.01f), //사자자리
+        new stars_type("Denebola",11.490388f, 14.34204f, 2.14f),
+        new stars_type("Algieba",10.195816f, 19.50307f, 2.01f),
+        new stars_type("Zozma", 11.140641f, 20.31265f, 2.56f),
+        new stars_type("RasElased",9.455110f, 23.46274f, 2.97f),
+        new stars_type("Aldhafera",10.164140f, 23.25024f, 3.43f),
+        new stars_type("Chort",11.141444f, 15.25471f, 3.33f),
+        new stars_type("Rasalas",9.524596f, 26.00255f, 3.88f)
+
+
 
     };
 }

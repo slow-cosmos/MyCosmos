@@ -44,19 +44,21 @@ public class LineManage : MonoBehaviour
 
         //라인 그리기
         LineRenderer lr = line.GetComponent<LineRenderer>();
-        lr.startWidth = .05f;
-        lr.endWidth = .05f;
+        lr.SetWidth(5, 5);
         lr.SetPosition(0, star1.GetComponent<Transform>().position);
         lr.SetPosition(1, star2.GetComponent<Transform>().position);
 
-        //라인 콜리더
-        EdgeCollider2D col = line.gameObject.AddComponent<EdgeCollider2D>();
+        //엣지 콜리더
+        /*EdgeCollider2D col = line.gameObject.AddComponent<EdgeCollider2D>();
         Vector2[] colliderPoints;
         colliderPoints = col.points;
         colliderPoints[0] = star1.GetComponent<Transform>().position;
         colliderPoints[1] = star2.GetComponent<Transform>().position;
         col.points = colliderPoints;
-        col.edgeRadius = 0.1f;
+        col.edgeRadius = 100f;*/
+
+        BoxCollider col = line.gameObject.AddComponent<BoxCollider>();
+        col.size = new Vector3(Vector3.Distance(star1.transform.position, star2.transform.position), 5.0f, 5.0f);
     }
 
     public void LineDestroy(GameObject line)

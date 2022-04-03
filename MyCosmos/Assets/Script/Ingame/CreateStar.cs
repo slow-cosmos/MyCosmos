@@ -7,7 +7,7 @@ public class CreateStar : MonoBehaviour
     //https://medium.com/microsoft-design/building-a-virtual-sky-883d4d1080f4
     public GameObject star;
     StarDatabase sdb;
-    int maxStar = 1;
+    int maxStar=9;
 
     // Start is called before the first frame update
     void Start()
@@ -27,10 +27,11 @@ public class CreateStar : MonoBehaviour
 
         for (int i = 0; i < maxStar; i++)
         {
-            ra = sdb.star_Database[i].ra;
-            dec = sdb.star_Database[i].dec;
+            ra = sdb.star_Database[i].ra * -15.0f * Mathf.Deg2Rad;
+            dec = sdb.star_Database[i].dec * Mathf.Deg2Rad;
             SphericalToCartesian(ra, dec, r, ref x, ref y, ref z);
-            Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
+            GameObject Instance = Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
+            Instance.name = sdb.star_Database[i].name;
 
         }
     }
