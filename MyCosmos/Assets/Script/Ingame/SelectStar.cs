@@ -22,16 +22,15 @@ public class SelectStar : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = getCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
-
-            if(hit2D.collider != null)
-            {
-                lineManage.LineDestroy(hit2D.collider.gameObject);
-            }
   
             if(Physics.Raycast(ray, out hit))
             {
-                if (star1==null) { //별1 체크
+                if(hit.collider.gameObject.tag=="Line")
+                {
+                    lineManage.LineDestroy(hit.collider.gameObject);
+                }
+
+                else if (star1==null) { //별1 체크
                     star1 = hit.collider.gameObject;
                     star1.GetComponent<Renderer>().material.color = Color.red;
                     //Debug.Log("check star1");

@@ -8,15 +8,6 @@ public class LineManage : MonoBehaviour
 
     public GameObject Line;
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void LineSpawner(GameObject star1, GameObject star2)
     {
         //하이어라키 순서 정렬
@@ -42,11 +33,6 @@ public class LineManage : MonoBehaviour
         //부모 오브젝트 설정
         line.transform.parent = line.GetComponent<Line>().star1.transform;
 
-        //라인 그리기
-        LineRenderer lr = line.GetComponent<LineRenderer>();
-        lr.SetWidth(5, 5);
-        lr.SetPosition(0, star1.GetComponent<Transform>().position);
-        lr.SetPosition(1, star2.GetComponent<Transform>().position);
 
         //엣지 콜리더
         /*EdgeCollider2D col = line.gameObject.AddComponent<EdgeCollider2D>();
@@ -57,12 +43,12 @@ public class LineManage : MonoBehaviour
         col.points = colliderPoints;
         col.edgeRadius = 100f;*/
 
-        BoxCollider col = line.gameObject.AddComponent<BoxCollider>();
-        col.size = new Vector3(Vector3.Distance(star1.transform.position, star2.transform.position), 5.0f, 5.0f);
+        
     }
 
     public void LineDestroy(GameObject line)
     {
         Destroy(line);
+        Destroy(line.transform.parent.gameObject);
     }
 }
