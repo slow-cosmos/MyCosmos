@@ -19,15 +19,24 @@ public class StarDatabase : MonoBehaviour
 
     public stars_type[] star_Database = new stars_type[]
     {
-        new stars_type("Sirius", 6.450891f, -16.425801f, -1.470000f),
-        new stars_type("Regulus", 10.195816f, 19.50307f,2.01f), //사자자리
-        new stars_type("Denebola",11.490388f, 14.34204f, 2.14f),
-        new stars_type("Algieba",10.195816f, 19.50307f, 2.01f),
-        new stars_type("Zozma", 11.140641f, 20.31265f, 2.56f),
-        new stars_type("RasElased",9.455110f, 23.46274f, 2.97f),
-        new stars_type("Aldhafera",10.164140f, 23.25024f, 3.43f),
-        new stars_type("Chort",11.141444f, 15.25471f, 3.33f),
-        new stars_type("Rasalas",9.524596f, 26.00255f, 3.88f)
+        new stars_type("Polaris", 3.0095f, 89.2132f, 1.95f),
+        new stars_type("Denebola",11.835f, 14.442f, 2.10f), //사자자리
+        new stars_type("Zosma",11.252f, 20.401f, 2.55f),
+        new stars_type("Chertan",11.254f, 15.304f, 3.30f),
+        new stars_type("Algieba",10.352f,19.723f, 2.20f),
+        new stars_type("Regulus", 10.1555f, 11.834f, 1.35f),
+        new stars_type("Aldzhabkhakh", 10.138f,16.652f, 3.45f),
+        new stars_type("Adhafera",10.292f,23.303f, 3.40f),
+        new stars_type("Rasalas",9.903f,25.900f, 3.85f),
+        new stars_type("Algenubi",9.795f, 23.669f, 2.95f),
+        new stars_type("Nekkar",15.041f,40.302f, 3.45f), //목동자리
+        new stars_type("Printseps", 15.319f, 33.226f, 3.45f),
+        new stars_type("Seginus",14.543f, 38.206f, 3.00f),
+        new stars_type("Izar", 14.759f,26.975f, 2.5f),
+        new stars_type("Boo",14.541f,30.271f, 3.55f),
+        new stars_type("Arcturus",14.273f,19.059f, 0.15f),
+        new stars_type("BooB", 14.702f,13.633f, 4.45f)
+
 
 
 
