@@ -8,7 +8,7 @@ public class CreateStar : MonoBehaviour
     public GameObject star;
     StarDatabase sdb;
     GameObject Instance;
-    int maxStar=17;
+    int maxStar=1000;
 
     // Start is called before the first frame update
     void Start()
@@ -28,11 +28,15 @@ public class CreateStar : MonoBehaviour
 
         for (int i = 0; i < maxStar; i++)
         {
+            float startSize = 2.0f * (8.0f - sdb.star_Database[i].mag);
             ra = sdb.star_Database[i].ra * -15.0f * Mathf.Deg2Rad;
             dec = sdb.star_Database[i].dec * Mathf.Deg2Rad;
             SphericalToCartesian(ra, dec, r, ref x, ref y, ref z);
             Instance = Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
             Instance.name = sdb.star_Database[i].name;
+            Instance.transform.localScale = new Vector3(startSize,startSize,startSize);
+            //Debug.Log(sdb.star_Database[i].name + ":" + sdb.star_Database[i].ra + " " + sdb.star_Database[i].dec);
+            if (i == maxStar - 1) Debug.Log(sdb.star_Database[i].mag);
         }
     }
 
