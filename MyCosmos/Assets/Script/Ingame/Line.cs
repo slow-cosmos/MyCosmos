@@ -23,7 +23,7 @@ public class Line : MonoBehaviour
 
     void LineCollider()
     {
-        col.size = new Vector3(5.0f, 5.0f, Vector3.Distance(star1Pos, star2Pos));
+        col.size = new Vector3(5.0f, 5.0f, Vector3.Distance(star1Pos, star2Pos)-5);
         transform.position = (star2Pos + star1Pos) / 2;
         col.transform.LookAt(star2Pos);
     }
@@ -32,7 +32,7 @@ public class Line : MonoBehaviour
     {
         //라인 그리기
         LineRenderer lr = gameObject.GetComponent<LineRenderer>();
-        lr.SetWidth(5, 5);
+        lr.SetWidth(3, 3);
         lr.SetPosition(0, star1Pos);
         lr.SetPosition(1, star2Pos);
     }

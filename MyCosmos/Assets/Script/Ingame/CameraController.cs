@@ -36,7 +36,7 @@ public class CameraController : MonoBehaviour
             transform.eulerAngles = new Vector3(-rx, ry, 0);
         }*/
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) //방향키 회전
         {
             rx -= rotSpeed * Time.deltaTime;
             if (rx < -90) rx = -90;
@@ -62,13 +62,13 @@ public class CameraController : MonoBehaviour
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * -1;
         camera.fieldOfView += scroll;
-        if (camera.fieldOfView < 40)
+        if (camera.fieldOfView < 20) //줌인 
         {
-            camera.fieldOfView = 40;
+            camera.fieldOfView = 20;
         }
-        else if(camera.fieldOfView>100)
+        else if(camera.fieldOfView>80) //줌아웃
         {
-            camera.fieldOfView = 100;
+            camera.fieldOfView = 80;
         }
         
     }

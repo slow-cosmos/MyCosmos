@@ -13,6 +13,7 @@ public class CreateStar : MonoBehaviour
     public int maxStar=1000;
     public float size;
 
+    public float lst;
     float lat = 37.582474f;
 
     // Start is called before the first frame update
@@ -33,11 +34,10 @@ public class CreateStar : MonoBehaviour
         float r = 1000.0f;
         float alt = 0.0f;
         float az = 0.0f;
-        float lst;
 
         lst = chapterManage.lst;
 
-        Debug.Log(lst);
+        Debug.Log("lst: "+lst);
 
         for (int i = 0; i < maxStar; i++)
         {
@@ -51,11 +51,12 @@ public class CreateStar : MonoBehaviour
             Instance.name = sdb.star_Database[i].name;
             Instance.transform.localScale = new Vector3(startSize,startSize,startSize);
             
-            Debug.Log(sdb.star_Database[i].name + ":" + sdb.star_Database[i].ra + " " + sdb.star_Database[i].dec + " az "+ az + " alt " + alt);
-            //if (i == maxStar - 1) Debug.Log(sdb.star_Database[i].mag);
+            //Debug.Log(sdb.star_Database[i].name + ":" + sdb.star_Database[i].ra + " " + sdb.star_Database[i].dec + " az "+ az + " alt " + alt);
+            if (i == maxStar - 1) Debug.Log("마지막 mag: "+sdb.star_Database[i].mag);
         }
     }
 
+    //지평좌표계 -> x,y,z
     void SphericalToCartesian (float az, float alt, float r, ref float x, ref float y, ref float z)
     {
         alt = (Mathf.PI / 2) - alt;
@@ -65,6 +66,7 @@ public class CreateStar : MonoBehaviour
         y = r * Mathf.Cos(alt);
     }
 
+    //적도좌표계 -> 지평좌표계
     void EquatorialToHorizontal(float ra, float dec, float lst, ref float alt, ref float az)
     {
         float ha = (lst - ra)*15%360;

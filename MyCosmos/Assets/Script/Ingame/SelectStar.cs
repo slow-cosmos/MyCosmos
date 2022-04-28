@@ -36,7 +36,7 @@ public class SelectStar : MonoBehaviour
                     { //별1 체크
                         star1 = hit.collider.gameObject;
                         //star1.GetComponent<Renderer>().material.color = Color.red;
-                        Debug.Log("check star1");
+                        //Debug.Log("check star1");
                     }
                     else if (star1 == hit.collider.gameObject) //별1 체크 취소
                     {

@@ -31,18 +31,11 @@ public class LineManage : MonoBehaviour
         line.GetComponent<Line>().star2 = endStar;
 
         //부모 오브젝트 설정
-        line.transform.parent = line.GetComponent<Line>().star1.transform;
+        //line.transform.parent = line.GetComponent<Line>().star1.transform;
+        line.transform.parent = GameObject.Find("LineGroup").transform;
 
-
-        //엣지 콜리더
-        /*EdgeCollider2D col = line.gameObject.AddComponent<EdgeCollider2D>();
-        Vector2[] colliderPoints;
-        colliderPoints = col.points;
-        colliderPoints[0] = star1.GetComponent<Transform>().position;
-        colliderPoints[1] = star2.GetComponent<Transform>().position;
-        col.points = colliderPoints;
-        col.edgeRadius = 100f;*/
-
+        //star1star2로 이름변경
+        line.gameObject.name = startStar.name + endStar.name;
         
     }
 
