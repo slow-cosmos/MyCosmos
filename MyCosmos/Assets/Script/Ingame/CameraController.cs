@@ -39,7 +39,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             rx -= rotSpeed * Time.deltaTime;
-            
+            if (rx < -90) rx = -90;
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -48,6 +48,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             rx += rotSpeed * Time.deltaTime;
+            if (rx > 90) rx = 90;
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -65,9 +66,9 @@ public class CameraController : MonoBehaviour
         {
             camera.fieldOfView = 40;
         }
-        else if(camera.fieldOfView>80)
+        else if(camera.fieldOfView>100)
         {
-            camera.fieldOfView = 80;
+            camera.fieldOfView = 100;
         }
         
     }

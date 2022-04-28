@@ -29,42 +29,47 @@ public class SelectStar : MonoBehaviour
                 {
                     lineManage.LineDestroy(hit.collider.gameObject);
                 }
-
-                else if (star1==null) { //별1 체크
-                    star1 = hit.collider.gameObject;
-                    star1.GetComponent<Renderer>().material.color = Color.red;
-                    //Debug.Log("check star1");
-                }
-                else if (star1 == hit.collider.gameObject) //별1 체크 취소
+                
+                if(hit.collider.gameObject.tag=="Star")
                 {
-                    star1.GetComponent<Renderer>().material.color = Color.clear;
-                    star1 = null;
-                    //Debug.Log("no check star1");
+                    if (star1 == null)
+                    { //별1 체크
+                        star1 = hit.collider.gameObject;
+                        //star1.GetComponent<Renderer>().material.color = Color.red;
+                        Debug.Log("check star1");
+                    }
+                    else if (star1 == hit.collider.gameObject) //별1 체크 취소
+                    {
+                        //star1.GetComponent<Renderer>().material.color = Color.clear;
+                        star1 = null;
+                        //Debug.Log("no check star1");
+                    }
+                    else if (star2 == null) //별2 체크
+                    {
+                        star2 = hit.collider.gameObject;
+                        //star2.GetComponent<Renderer>().material.color = Color.clear;
+                        //Debug.Log("check star2");
+                    }
+                    else if (star2 == hit.collider.gameObject) //별2 체크 취소
+                    {
+                        //star2.GetComponent<Renderer>().material.color = Color.clear;
+                        star2 = null;
+                        //Debug.Log("no check star2");
+                    }
                 }
-                else if (star2==null) //별2 체크
-                {
-                    star2 = hit.collider.gameObject;
-                    star2.GetComponent<Renderer>().material.color = Color.clear;
-                    //Debug.Log("check star2");
-                }
-                else if (star2 == hit.collider.gameObject) //별2 체크 취소
-                {
-                    star2.GetComponent<Renderer>().material.color = Color.clear;
-                    star2 = null;
-                    //Debug.Log("no check star2");
-                }
+                
             }
             else //다른 데 클릭하면 선택 취소
             {
                 if (star1)
                 {
-                    star1.GetComponent<Renderer>().material.color = Color.clear;
+                    //star1.GetComponent<Renderer>().material.color = Color.clear;
                     star1 = null;
                     //Debug.Log("no check star1");
                 }
                 if (star2)
                 {
-                    star2.GetComponent<Renderer>().material.color = Color.clear;
+                    //star2.GetComponent<Renderer>().material.color = Color.clear;
                     star2 = null;
                     //Debug.Log("no check star2");
                 }
@@ -76,8 +81,8 @@ public class SelectStar : MonoBehaviour
         {
             lineManage.LineSpawner(star1, star2);
 
-            star1.GetComponent<Renderer>().material.color = Color.clear;
-            star2.GetComponent<Renderer>().material.color = Color.clear;
+            //star1.GetComponent<Renderer>().material.color = Color.clear;
+            //star2.GetComponent<Renderer>().material.color = Color.clear;
             star1 = null;
             star2 = null;
         }
