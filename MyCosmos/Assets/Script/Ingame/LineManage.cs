@@ -35,7 +35,7 @@ public class LineManage : MonoBehaviour
         line.transform.parent = GameObject.Find("LineGroup").transform;
 
         //star1star2로 이름변경
-        line.gameObject.name = startStar.name + endStar.name;
+        line.gameObject.name = startStar.name +"-"+ endStar.name;
         
     }
 

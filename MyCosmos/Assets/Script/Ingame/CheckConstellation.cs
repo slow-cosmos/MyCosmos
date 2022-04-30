@@ -23,9 +23,9 @@ public class CheckConstellation : MonoBehaviour
             if (findCheck[i] == true) continue; //이미 찾은 별자리라면
 
             bool check = true;
-            for(int j=0;j<cdb.constell_Database[i].construction.Count;j+=2) //별자리 구성별 모두 확인
+            for(int j=0;j<cdb.constell_Database[i].construction.Count;j++) //별자리 구성별 모두 확인
             {
-                if(GameObject.Find(cdb.constell_Database[i].construction[j]+cdb.constell_Database[i].construction[j+1])==null)
+                if(GameObject.Find(cdb.constell_Database[i].construction[j])==null)
                 {
                     check = false;
                     break;
