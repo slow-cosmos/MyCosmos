@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db77314fc67cb94dafd57df5ac0998f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 200
+  rotSpeed: 150
   zoomSpeed: 30
 --- !u!1 &506894762
 GameObject:
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   star: {fileID: 120841600683821698, guid: abf4f6b3bcd8dcb4f88052cbd1bd73c9, type: 3}
-  maxStar: 2000
+  maxStar: 4000
   size: 1
   lst: 0
 --- !u!4 &1752443878

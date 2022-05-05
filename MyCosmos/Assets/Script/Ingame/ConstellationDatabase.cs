@@ -56,9 +56,48 @@ public class ConstellationDatabase : MonoBehaviour
         new constell_type("궁수자리 Sagittarius", new List<string>(){"Kaus Borealis-209","Kaus Meridionalis-Kaus Borealis",
         "Kaus Meridionalis-209","Nunki-209","Nunki-244","104-244","104-209","Kaus Australis-104","Kaus Australis-Kaus Meridionalis",
         "Kaus Meridionalis-Nash","Kaus Australis-Nash","Nash-954","Kaus Australis-193","Kaus Borealis-436","Nunki-299","299-390",
-        "390-1414","480-1414","244-1015","845-1015","798-845","598-798","503-598","598-698"})
+        "390-1414","480-1414","244-1015","845-1015","798-845","598-798","503-598","598-698"}),
 
+        //가을철 별자리
+        new constell_type("페가수스자리 Pegasus", new List<string>(){"Scheat-Markab","Alpheratz-Scheat","Alpheratz-Algenib","Markab-Algenib",
+        "Scheat-Matar","Matar-707","402-514","402-613","Markab-635","267-635","267-300","Enif-300","Scheat-294","294-514"}),
+        new constell_type("안드로메다자리 Andromeda", new List<string>(){"Alpheratz-229","Mirach-229","Mirach-Almaak","Mirach-447","447-949"}),
+        new constell_type("페르세우스자리 Perseus", new List<string>(){"Mirphak-Algol","Algol-240","240-642","Mirphak-163","163-393",
+        "Mirphak-181","160-181","160-515","143-515","143-429"}),
+        new constell_type("도마뱀자리 Lacerta", new List<string>(){"614-947","392-768","392-839","839-979","768-979","768-947"}),
+        new constell_type("삼각형자리 Triangulum", new List<string>(){"176-538","176-268","268-538"}),
+        new constell_type("양자리 Aries",  new List<string>(){"Hamal-333","Hamal-Sheratan","Sheratan-461"}),
+        new constell_type("물고기자리 Pisces", new List<string>(){"338-682","420-682","420-1026","859-1026","859-1345",
+        "691-1345","691-850","850-2485","544-2485","544-606","606-912","912-1539","366-1539","366-700","606-700",
+        "338-1098","1098-1180","1180-2837","1098-2837"}),
+        new constell_type("조랑말자리 Equuleus", new List<string>(){"891-1974","891-1140","891-1140","481-1974"}),
+        new constell_type("남쪽물고기자리 Piscis Austrinus", new List<string>(){"Fomalhaut-628","628-2644","1672-2644","1525-1672",
+        "716-1525","636-716"}),
+        new constell_type("물병자리 Aquarius", new List<string>(){"231-556","231-357","556-1326","623-1326","715-2645","623-2645",
+        "Sadalmelik-623","Sadalmelik-453","349-453","349-548","381-548","381-671","505-671","Sadalsuud-Sadalmelik","Sadalsuud-408"}),
+        new constell_type("염소자리 Capricornus", new List<string>(){"189-321","189-604","189-604","576-599","576-706","401-706",
+        "401-576","363-706","148-363"}),
+        new constell_type("고래자리 Cetus", new List<string>(){"277-327","Diphda-277","Diphda-312","Diphda-284","284-1181","666-1181",
+        "666-1331","1331-1403","382-1403","327-382","280-570","570-2604","1331-2604","Menkar-280","Menkar-1143","692-1143",
+        "692-719","719-1392","280-1392","719-783"}),
 
-
+        //겨울철 별자리
+        new constell_type("오리온자리 Orion", new List<string>(){"Alnilam-Mintaka","Alnilam-Alnitak","Alnitak-Saiph","Rigel-Saiph",
+        "Rigel-Mintaka","Bellatrix-Mintaka","Bellatrix-256","Betelgeuse-256","Betelgeuse-Alnitak","Bellatrix-212","212-770",
+        "770-1060","212-354","354-2363","881-2363","Betelgeuse-596","596-830","830-862","596-862","806-830","862-1905"}),
+        new constell_type("큰개자리 Canis Major", new List<string>(){"Sirius-496","Mirzam-496","Sirius-183","Wezen-183","Wezen-285",
+        "285-466","466-496","496-958","Sirius-789","586-789","572-586","572-789","Wezen-528","Aludra-528","Adhara-285","Adhara-182","Adhara-290"}),
+        new constell_type("토끼자리 Lepus", new List<string>(){"Arneb-232","Arneb-Nihal","Nihal-213","213-232","Nihal-324","Arneb-388",
+        "324-388","Arneb-308","308-368","368-1102","232-710","710-2278","787-861","787-861"}),
+        new constell_type("황소자리 Taurus", new List<string>(){"263-334","263-345","345-395","339-395","395-722","302-722",
+        "Aldebaran-302","Aldebaran-260","260-345","302-695","Alnath-695","Aldebaran-170"}),
+        new constell_type("쌍둥이자리 Gemini", new List<string>(){"Castor-822","328-822","190-822","404-822","404-558","Pollux-558",
+        "316-558","291-558","291-527","Alhena-527","291-320","250-320","152-190","152-237","237-618","190-602"}),
+        new constell_type("외뿔소자리 Monoceros", new List<string>(){"807-3582","389-518","389-615","615-790","491-790","615-807"}),
+        new constell_type("마차부자리 Auriga", new List<string>(){"Alnath-Hassaleh","Alnath-109","Menkalinan-109","Capella-Menkalinan",
+        "Capella-360","Hassaleh-360"}),
+        new constell_type("게자리 Cancer", new List<string>(){"303-493","493-687","493-1088","540-1088","1088-1889"})
     };
+
+    
 }

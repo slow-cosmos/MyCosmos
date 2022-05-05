@@ -10,8 +10,11 @@ public class CreateStar : MonoBehaviour
     ChapterManage chapterManage;
     GameObject Instance;
 
-    public int maxStar=1000;
-    public float size;
+    [SerializeField]
+    int maxStar;
+
+    [SerializeField]
+    float size;
 
     public float lst;
     float lat = 37.582474f;
@@ -41,7 +44,7 @@ public class CreateStar : MonoBehaviour
 
         for (int i = 0; i < maxStar; i++)
         {
-            float startSize = size * Mathf.Min(6.0f, (-11 / 9) * sdb.star_Database[i].mag + (21 / 3));
+            float startSize = size * Mathf.Min(7.0f, (-11 / 9) * sdb.star_Database[i].mag + (21 / 3));
             //ra = sdb.star_Database[i].ra * -15.0f * Mathf.Deg2Rad;
             //dec = sdb.star_Database[i].dec * Mathf.Deg2Rad;
             //SphericalToCartesian(ra, dec, r, ref x, ref y, ref z);

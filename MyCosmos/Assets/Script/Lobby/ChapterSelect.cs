@@ -8,7 +8,7 @@ public class ChapterSelect : MonoBehaviour
 {
     ChapterManage chapterManage;
 
-    public void Start()
+    private void Start()
     {
         chapterManage = GameObject.Find("ChapterManage").GetComponent<ChapterManage>();
     }
@@ -16,25 +16,29 @@ public class ChapterSelect : MonoBehaviour
     public void SpringSelect()
     {
         chapterManage.lst = 11.3f + 24;
-        SceneManager.LoadScene("Ingame");
+        chapterManage.chapter = "spring";
+        LoadingSceneManager.LoadScene("Ingame");
     }
 
     public void SummerSelect()
     {
         chapterManage.lst = 17.35f + 24;
-        SceneManager.LoadScene("Ingame");
+        chapterManage.chapter = "summer";
+        LoadingSceneManager.LoadScene("Ingame");
     }
 
     public void AutumnSelect()
     {
         chapterManage.lst = 23.52f + 24;
-        SceneManager.LoadScene("Ingame");
+        chapterManage.chapter = "autumn";
+        LoadingSceneManager.LoadScene("Ingame");
     }
 
     public void WinterSelect()
     {
         chapterManage.lst = 5.44f + 24;
-        SceneManager.LoadScene("Ingame");
+        chapterManage.chapter = "winter";
+        LoadingSceneManager.LoadScene("Ingame");
     }
 
 }
