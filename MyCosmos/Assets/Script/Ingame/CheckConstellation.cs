@@ -2,15 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckConstellation : MonoBehaviour
+public class CheckConstellation : ConstellationDatabase
 {
-    ConstellationDatabase cdb;
+    ChapterManage chapterManage;
+
+    List<string> constell_arr = new List<string>();
     List<bool> findCheck=new List<bool>();
+    public constell_type[] constell_Database;
 
     void Start()
     {
-        cdb = GameObject.Find("ConstellationDatabase").GetComponent<ConstellationDatabase>();
-        for(int i=0;i< cdb.constell_Database.Length;i++)
+        chapterManage = GameObject.Find("ChapterManage").GetComponent<ChapterManage>();
+
+        switch (chapterManage.chapter) //챕터별 별자리
+        {
+            case "spring":
+                constell_Database = base.springConstell;
+                break;
+            case "summer":
+                constell_Database = base.summerConstell;
+                break;
+            case "autumn":
+                constell_Database = base.autumnConstell;
+                break;
+            case "winter":
+                constell_Database = base.winterConstell;
+                break;
+        }
+
+        for(int i=0;i< constell_Database.Length;i++)
         {
             findCheck.Add(false);
         }
@@ -18,14 +38,14 @@ public class CheckConstellation : MonoBehaviour
 
     void LateUpdate()
     {
-        for(int i=0;i<cdb.constell_Database.Length;i++) //별자리 모두 확인
+        for(int i=0;i<constell_Database.Length;i++) //별자리 모두 확인
         {
             if (findCheck[i] == true) continue; //이미 찾은 별자리라면
 
             bool check = true;
-            for(int j=0;j<cdb.constell_Database[i].construction.Count;j++) //별자리 구성별 모두 확인
+            for(int j=0;j<constell_Database[i].construction.Count;j++) //별자리 구성별 모두 확인
             {
-                if(GameObject.Find(cdb.constell_Database[i].construction[j])==null)
+                if(GameObject.Find(constell_Database[i].construction[j])==null)
                 {
                     check = false;
                     break;
@@ -34,7 +54,7 @@ public class CheckConstellation : MonoBehaviour
             if(check==true)
             {
                 findCheck[i] = true;
-                Debug.Log(cdb.constell_Database[i].name);
+                Debug.Log(constell_Database[i].name);
                 break;
             }
         }

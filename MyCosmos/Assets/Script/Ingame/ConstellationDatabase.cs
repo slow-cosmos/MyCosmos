@@ -15,7 +15,7 @@ public class ConstellationDatabase : MonoBehaviour
         }
     }
 
-    public constell_type[] constell_Database = new constell_type[]
+    public constell_type[] springConstell = new constell_type[]
     {
         //봄철 별자리
         new constell_type("목동자리 Bootes",new List<string>(){"187-287","187-318","279-287","Izar-279",
@@ -34,8 +34,11 @@ public class ConstellationDatabase : MonoBehaviour
         new constell_type("바다뱀자리 Hydra", new List<string>(){"173-1519","712-1519","304-712","195-304","195-425","335-425","335-588",
         "Alphard-588","Alphard-1009","959-1009","467-959","194-467","194-774","254-774","724-774","254-609","724-863","609-863"}),
         new constell_type("컵자리 Crater", new List<string>(){"1135-1986","1151-1986","559-1151","1135-1303","314-1303","314-559",
-        "559-875","314-574","574-875"}),
+        "559-875","314-574","574-875"})
+    };
 
+    public constell_type[] summerConstell = new constell_type[]
+    {
         //여름철 별자리
         new constell_type("거문고자리 Lyra", new List<string>(){"Vega-765","Sheliak-765","650-765","227-Sheliak","227-650"}),
         new constell_type("독수리자리 Aquila", new List<string>(){"Altair-Tarazed","Altair-Alshain","Altair-252","175-252",
@@ -56,8 +59,11 @@ public class ConstellationDatabase : MonoBehaviour
         new constell_type("궁수자리 Sagittarius", new List<string>(){"Kaus Borealis-209","Kaus Meridionalis-Kaus Borealis",
         "Kaus Meridionalis-209","Nunki-209","Nunki-244","104-244","104-209","Kaus Australis-104","Kaus Australis-Kaus Meridionalis",
         "Kaus Meridionalis-Nash","Kaus Australis-Nash","Nash-954","Kaus Australis-193","Kaus Borealis-436","Nunki-299","299-390",
-        "390-1414","480-1414","244-1015","845-1015","798-845","598-798","503-598","598-698"}),
-
+        "390-1414","480-1414","244-1015","845-1015","798-845","598-798","503-598","598-698"})
+    };
+    
+    public constell_type[] autumnConstell = new constell_type[]
+    {
         //가을철 별자리
         new constell_type("페가수스자리 Pegasus", new List<string>(){"Scheat-Markab","Alpheratz-Scheat","Alpheratz-Algenib","Markab-Algenib",
         "Scheat-Matar","Matar-707","402-514","402-613","Markab-635","267-635","267-300","Enif-300","Scheat-294","294-514"}),
@@ -79,8 +85,11 @@ public class ConstellationDatabase : MonoBehaviour
         "401-576","363-706","148-363"}),
         new constell_type("고래자리 Cetus", new List<string>(){"277-327","Diphda-277","Diphda-312","Diphda-284","284-1181","666-1181",
         "666-1331","1331-1403","382-1403","327-382","280-570","570-2604","1331-2604","Menkar-280","Menkar-1143","692-1143",
-        "692-719","719-1392","280-1392","719-783"}),
+        "692-719","719-1392","280-1392","719-783"})
+    };
 
+    public constell_type[] winterConstell = new constell_type[]
+    {
         //겨울철 별자리
         new constell_type("오리온자리 Orion", new List<string>(){"Alnilam-Mintaka","Alnilam-Alnitak","Alnitak-Saiph","Rigel-Saiph",
         "Rigel-Mintaka","Bellatrix-Mintaka","Bellatrix-256","Betelgeuse-256","Betelgeuse-Alnitak","Bellatrix-212","212-770",
