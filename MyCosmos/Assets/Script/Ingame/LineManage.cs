@@ -13,16 +13,10 @@ public class LineManage : MonoBehaviour
         //하이어라키 순서 정렬
         GameObject startStar = star1.transform.GetSiblingIndex() < star2.transform.GetSiblingIndex() ? star1 : star2;
         GameObject endStar = star1.transform.GetSiblingIndex() < star2.transform.GetSiblingIndex() ? star2 : star1;
-        
+
+        string lineName = startStar.name + "-" + endStar.name;
         //라인 중복 체크
-        for(int i = 0; i < startStar.transform.childCount; i++)
-        {
-            GameObject childObject = startStar.transform.GetChild(i).gameObject;
-            if (Equals(childObject.GetComponent<Line>().star2,star2)|| Equals(childObject.GetComponent<Line>().star2, star1))
-            {
-                return;
-            }
-        }
+        if (GameObject.Find(lineName)) return;
 
         GameObject line = Instantiate(Line); //라인 생성
 

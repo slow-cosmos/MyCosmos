@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
+    [SerializeField]
+    Material mat;
+
     public GameObject star1, star2;
     GameObject child;
     BoxCollider col;
@@ -32,8 +35,9 @@ public class Line : MonoBehaviour
     {
         //라인 그리기
         LineRenderer lr = gameObject.GetComponent<LineRenderer>();
-        lr.SetWidth(3, 3);
+        lr.SetWidth(2, 2);
         lr.SetPosition(0, star1Pos);
         lr.SetPosition(1, star2Pos);
+        lr.GetComponent<Renderer>().material = mat;
     }
 }
