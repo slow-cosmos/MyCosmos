@@ -11,17 +11,11 @@ public class QuestManage : MonoBehaviour
 
     public float gap = 70;
     //public float questNum = 5;
-    public List<string> constellArr;
 
     void Start()
     {
         checkConstellation = GameObject.Find("CheckConstellation").GetComponent<CheckConstellation>();
 
-        constellArr.Clear();
-        for(int i=0;i<checkConstellation.constell_Database.Length;i++)
-        {
-            constellArr.Add(checkConstellation.constell_Database[i].name);
-        }
         QuestInit();
     }
 
@@ -42,7 +36,6 @@ public class QuestManage : MonoBehaviour
             quest.interactable = false; 
         }
     }
-
 
     
 }

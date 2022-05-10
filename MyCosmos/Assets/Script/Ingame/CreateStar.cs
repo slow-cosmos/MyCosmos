@@ -50,6 +50,9 @@ public class CreateStar : MonoBehaviour
             //SphericalToCartesian(ra, dec, r, ref x, ref y, ref z);
             EquatorialToHorizontal(sdb.star_Database[i].ra, sdb.star_Database[i].dec,lst,ref alt, ref az);
             SphericalToCartesian(az * Mathf.Deg2Rad, alt * Mathf.Deg2Rad, r, ref x, ref y, ref z);
+
+            if (y < 0) continue;
+
             Instance = Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
             Instance.name = sdb.star_Database[i].name;
             Instance.transform.localScale = new Vector3(startSize,startSize,startSize);

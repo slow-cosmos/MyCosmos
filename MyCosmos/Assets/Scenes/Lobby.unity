@@ -862,6 +862,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: a242cf322c339984eb70f9acd64f9c38,
+        type: 3}
+    - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_FontData.m_RichText
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6634838933629547419, guid: bf98fb83aaa58014697bac8c299f9030,
         type: 3}
       propertyPath: lobbyCanvas

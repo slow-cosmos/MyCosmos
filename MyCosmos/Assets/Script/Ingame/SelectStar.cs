@@ -19,7 +19,7 @@ public class SelectStar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             Ray ray = getCamera.ScreenPointToRay(Input.mousePosition);
   

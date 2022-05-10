@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
         camera = gameObject.GetComponent<Camera>();
     }
 
-    void LateUpdate()
+    void Update()
     {
         Rotate();
         Zoom();
@@ -25,16 +25,16 @@ public class CameraController : MonoBehaviour
 
     void Rotate()
     {
-        /*if (Input.GetMouseButton(0)) //드래그 회전
+        if (Input.GetMouseButton(0)) //드래그 회전
         {
             float mx = Input.GetAxis("Mouse X");
             float my = Input.GetAxis("Mouse Y");
 
             rx += rotSpeed * my * Time.deltaTime;
-            ry += rotSpeed * mx * Time.deltaTime;
+            ry -= rotSpeed * mx * Time.deltaTime;
 
             transform.eulerAngles = new Vector3(-rx, ry, 0);
-        }*/
+        }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) //방향키 회전
         {
@@ -60,15 +60,44 @@ public class CameraController : MonoBehaviour
 
     void Zoom()
     {
-        float scroll = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * -1;
-        camera.fieldOfView += scroll;
-        if (camera.fieldOfView < 20) //줌인 
+        if (Input.touchCount == 2) //두 손가락 터치 줌인
         {
-            camera.fieldOfView = 20;
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+            camera.fieldOfView += deltaMagnitudeDiff * zoomSpeed;
+            camera.fieldOfView = Mathf.Clamp(camera.fieldOfView, 0.1f, 179.9f);
+
+            if (camera.fieldOfView < 20) //줌인 
+            {
+                camera.fieldOfView = 20;
+            }
+            else if (camera.fieldOfView > 80) //줌아웃
+            {
+                camera.fieldOfView = 80;
+            }
         }
-        else if(camera.fieldOfView>80) //줌아웃
+
+        else
         {
-            camera.fieldOfView = 80;
+            float scroll = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * -1;
+            camera.fieldOfView += scroll;
+            if (camera.fieldOfView < 20) //줌인 
+            {
+                camera.fieldOfView = 20;
+            }
+            else if (camera.fieldOfView > 80) //줌아웃
+            {
+                camera.fieldOfView = 80;
+            }
         }
         
     }
