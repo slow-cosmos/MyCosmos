@@ -18,11 +18,16 @@ public class UIButton : MonoBehaviour
     [SerializeField]
     GameObject info;
 
+    [SerializeField]
+    Image skyImage;
+
     public void CloseBtn()
     {
         questCanvas.gameObject.SetActive(false);
         lobbyButton.gameObject.SetActive(true);
         questButton.gameObject.SetActive(true);
+
+        GameObject.Find("Main Camera").GetComponent<CameraController>().enabled=true;
     }
 
     public void QuestBtn()
@@ -30,6 +35,8 @@ public class UIButton : MonoBehaviour
         questCanvas.gameObject.SetActive(true);
         lobbyButton.gameObject.SetActive(false);
         questButton.gameObject.SetActive(false);
+
+        GameObject.Find("Main Camera").GetComponent<CameraController>().enabled=false;
     }
 
     public void LobbyBtn()
@@ -44,11 +51,17 @@ public class UIButton : MonoBehaviour
         info.gameObject.SetActive(false);
     }
 
-    public void ConstellBtn()
+
+    public void Tab1()
     {
-        GameObject.Find("Quest").gameObject.SetActive(false);
-        GameObject.Find("QuestCanvas").transform.Find("PreviousButton").gameObject.SetActive(true);
-        GameObject.Find("QuestCanvas").transform.Find("ConstellInfo").gameObject.SetActive(true);
+        GameObject.Find("QuestCanvas").transform.Find("Tab1Group").gameObject.SetActive(true);
+        GameObject.Find("QuestCanvas").transform.Find("Tab2Group").gameObject.SetActive(false);
+    }
+
+    public void Tab2()
+    {
+        GameObject.Find("QuestCanvas").transform.Find("Tab2Group").gameObject.SetActive(true);
+        GameObject.Find("QuestCanvas").transform.Find("Tab1Group").gameObject.SetActive(false);
     }
 
 }

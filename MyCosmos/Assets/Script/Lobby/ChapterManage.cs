@@ -20,5 +20,4 @@ public class ChapterManage : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
 }

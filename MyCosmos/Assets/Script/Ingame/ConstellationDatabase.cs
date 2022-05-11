@@ -19,6 +19,9 @@ public class ConstellationDatabase : MonoBehaviour
         }
     }
 
+    public constell_type septentrions = new constell_type("북두칠성", "septentrions",
+        new List<string>(){"Dubhe-Merak","Merak-Phad","Phad-Megrez","Alioth-Megrez","Alioth-Mizar","Alkaid-Mizar"});
+
     public constell_type[] springConstell = new constell_type[]
     {
         //봄철 별자리
@@ -81,8 +84,10 @@ public class ConstellationDatabase : MonoBehaviour
         "691-1345","691-850","850-2485","544-2485","544-606","606-912","912-1539","366-1539","366-700","606-700",
         "338-1098","1098-1180","1180-2837","1098-2837"}),
         //new constell_type("조랑말자리", "Equuleus", new List<string>(){"891-1974","891-1140","891-1140","481-1974"}),
-        new constell_type("남쪽물고기자리", "Piscis Austrinus", new List<string>(){"Fomalhaut-628","628-2644","1672-2644","1525-1672",
-        "716-1525","636-716"}),
+        //new constell_type("남쪽물고기자리", "Piscis Austrinus", new List<string>(){"Fomalhaut-628","628-2644","1672-2644","1525-1672",
+        //"716-1525","636-716"}),
+        new constell_type("카시오페아자리", "Cassiopeia", new List<string>(){"Dubhe-Merak","Merak-Phad","Phad-Megrez","Alioth-Megrez",
+        "Alioth-Mizar","Alkaid-Mizar","Shedir-Caph","Cih-Shedir","Cih-Ruchbah","Ruchbah-248"}),
         new constell_type("물병자리", "Aquarius", new List<string>(){"231-556","231-357","556-1326","623-1326","715-2645","623-2645",
         "Sadalmelik-623","Sadalmelik-453","349-453","349-548","381-548","381-671","505-671","Sadalsuud-Sadalmelik","Sadalsuud-408"}),
         new constell_type("염소자리", "Capricornus", new List<string>(){"189-321","189-604","189-576","576-599","576-706","401-706",

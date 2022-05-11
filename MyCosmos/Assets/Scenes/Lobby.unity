@@ -456,6 +456,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7348599322232264652, guid: 4b8697da0210a5a47b442d55564d9f95,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348599322232264652, guid: 4b8697da0210a5a47b442d55564d9f95,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 7348599322232264652, guid: 4b8697da0210a5a47b442d55564d9f95,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1200
+      objectReference: {fileID: 0}
     - target: {fileID: 8049495563700479792, guid: 4b8697da0210a5a47b442d55564d9f95,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -864,6 +879,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
         type: 3}
+      propertyPath: m_Text
+      value: My Cosmos
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
@@ -871,7 +891,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: a242cf322c339984eb70f9acd64f9c38,
+      objectReference: {fileID: 12800000, guid: 9a7ebd20644ede54497f809cc8e621a5,
         type: 3}
     - target: {fileID: 2348848390483572437, guid: bf98fb83aaa58014697bac8c299f9030,
         type: 3}
@@ -882,6 +902,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674511834566731979, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674511834566731979, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674511834566731979, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 6634838933629547419, guid: bf98fb83aaa58014697bac8c299f9030,
         type: 3}

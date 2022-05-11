@@ -12,13 +12,22 @@ public class CameraController : MonoBehaviour
     private float rx, ry;
     private Camera camera;
 
+    SelectStar selectStar;
+
     void Start()
     {
         camera = gameObject.GetComponent<Camera>();
+        selectStar = GameObject.Find("StarSelect").GetComponent<SelectStar>();
     }
 
     void Update()
     {
+        /*if (selectStar.star1 != null)
+        {
+            float size = camera.fieldOfView / selectStar.selectScale;
+            selectStar.star1.transform.Find("Select").localScale = new Vector3(size, size, size);
+        }*/
+
         Rotate();
         Zoom();
     }
@@ -32,6 +41,9 @@ public class CameraController : MonoBehaviour
 
             rx += rotSpeed * my * Time.deltaTime;
             ry -= rotSpeed * mx * Time.deltaTime;
+
+            if (rx < -90) rx = -90;
+            if (rx > 0) rx = 0;
 
             transform.eulerAngles = new Vector3(-rx, ry, 0);
         }
@@ -48,7 +60,7 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             rx += rotSpeed * Time.deltaTime;
-            if (rx > 90) rx = 90;
+            if (rx > 0) rx = 0;
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -90,6 +102,7 @@ public class CameraController : MonoBehaviour
         {
             float scroll = Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * -1;
             camera.fieldOfView += scroll;
+
             if (camera.fieldOfView < 20) //줌인 
             {
                 camera.fieldOfView = 20;

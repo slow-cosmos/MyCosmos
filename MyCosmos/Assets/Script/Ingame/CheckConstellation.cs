@@ -66,7 +66,7 @@ public class CheckConstellation : ConstellationDatabase
 
                 for (int j = 0; j < constell_Database[i].construction.Count; j++) //찾은 별자리는 클릭해도 선 안 없어지게
                 {
-                    //Destroy(GameObject.Find(constell_Database[i].construction[j]).transform.GetChild(0).gameObject.GetComponent<BoxCollider>());
+                    Destroy(GameObject.Find(constell_Database[i].construction[j]).transform.GetChild(0).gameObject.GetComponent<BoxCollider>());
                 }
 
                 Debug.Log(constell_Database[i].name);
