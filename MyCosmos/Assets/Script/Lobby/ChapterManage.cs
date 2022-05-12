@@ -8,6 +8,8 @@ public class ChapterManage : MonoBehaviour
     public float lst;
     public string chapter;
 
+    public bool[] chapterClear;
+
     private void Awake()
     {
         if(Instance != null) //중복생성 피하기

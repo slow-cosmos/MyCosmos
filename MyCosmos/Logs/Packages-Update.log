@@ -47,3 +47,12 @@ The following packages were updated:
   com.unity.2d.animation from version 3.2.4 to 3.2.5
   com.unity.2d.psdimporter from version 2.1.5 to 2.1.6
   com.unity.2d.spriteshape from version 3.0.13 to 3.0.14
+
+=== Thu May 12 15:20:14 2022
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.universal@7.3.1
+  com.unity.visualeffectgraph@7.3.1

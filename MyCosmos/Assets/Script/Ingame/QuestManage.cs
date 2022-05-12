@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuestManage : MonoBehaviour
 {
     [SerializeField]
     Text constellName, constellDir;
+
+    [SerializeField]
+    Image clear;
+
+    [SerializeField]
+    Text clearText;
 
     [SerializeField]
     Text seasonName;
@@ -56,6 +63,11 @@ public class QuestManage : MonoBehaviour
 
         QuestInit();
         Tab2Init(season);
+    }
+
+    void LateUpdate()
+    {
+        CheckChapterClear();
     }
 
     //퀘스트 생성
@@ -133,5 +145,48 @@ public class QuestManage : MonoBehaviour
         }
     }
 
+    void CheckChapterClear()
+    {
+        bool check = true;
+        for(int i=0;i< questGroup.transform.childCount;i++)
+        {
+            if (questGroup.transform.GetChild(i).GetComponent<Toggle>().isOn == false) check = false;
+        }
+        if(check==true)
+        {
+            switch(season)
+            {
+                case "spring":
+                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[0] = true;
+                    break;
+                case "summer":
+                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[1] = true;
+                    break;
+                case "autumn":
+                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[2] = true;
+                    break;
+                case "winter":
+                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[3] = true;
+                    break;
+            }
+            StartCoroutine(ClearText());
+            
+        }
+    }
 
+    IEnumerator ClearText()
+    {
+        yield return new WaitForSeconds(3f);
+        clear.gameObject.SetActive(true);
+
+        while (clearText.color.a < 1.0f)
+        {
+            clearText.color = new Color(1, 1, 1, clearText.color.a + (Time.deltaTime / 2f));
+            
+        }
+
+        GameObject.Find("UICanvas").transform.Find("ClearButton").gameObject.SetActive(true);
+        yield return null;
+
+    }
 }
