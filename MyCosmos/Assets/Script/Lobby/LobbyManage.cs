@@ -20,4 +20,5 @@ public class LobbyManage : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

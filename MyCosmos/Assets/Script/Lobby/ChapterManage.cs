@@ -21,5 +21,4 @@ public class ChapterManage : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
 }

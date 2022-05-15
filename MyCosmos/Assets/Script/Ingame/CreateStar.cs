@@ -56,6 +56,8 @@ public class CreateStar : MonoBehaviour
             Instance = Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
             Instance.name = sdb.star_Database[i].name;
             Instance.transform.localScale = new Vector3(startSize,startSize,startSize);
+            Instance.transform.parent = GameObject.Find("StarGroup").transform;
+            Instance.GetComponent<Star>().index = sdb.star_Database[i].id;
             
             //Debug.Log(sdb.star_Database[i].name + ":" + sdb.star_Database[i].ra + " " + sdb.star_Database[i].dec + " az "+ az + " alt " + alt);
             if (i == maxStar - 1) Debug.Log("마지막 mag: "+sdb.star_Database[i].mag);

@@ -17,6 +17,8 @@ public class CheckConstellation : ConstellationDatabase
     //List<bool> findCheck=new List<bool>();
     public constell_type[] constell_Database;
 
+    bool check;
+
     void Start()
     {
         chapterManage = GameObject.Find("ChapterManage").GetComponent<ChapterManage>();
@@ -43,17 +45,26 @@ public class CheckConstellation : ConstellationDatabase
         }*/
     }
 
-    void LateUpdate()
+    public void Check()
     {
         for(int i=0;i<constell_Database.Length;i++) //별자리 모두 확인
         {
             if (constell_Database[i].check == true) continue; //이미 찾은 별자리라면
 
-            bool check = true;
+            check = true;
+
             for(int j=0;j<constell_Database[i].construction.Count;j++) //별자리 구성별 모두 확인
             {
-                if(GameObject.Find(constell_Database[i].construction[j])==null)
+                GameObject temp;
+                temp = GameObject.Find(constell_Database[i].construction[j]);
+                if (temp)
                 {
+                    //Debug.Log(j+":"+constell_Database[i].construction[j] + ":" + "Found");
+                    check = true;
+                }
+                else
+                {
+                    //Debug.Log(j+":"+constell_Database[i].construction[j] + ":" + "Not Found");
                     check = false;
                     break;
                 }
