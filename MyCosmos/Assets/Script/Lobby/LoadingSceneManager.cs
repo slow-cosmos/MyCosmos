@@ -11,6 +11,9 @@ public class LoadingSceneManager : MonoBehaviour
     //[SerializeField]
     //Image progressBar;
 
+    [SerializeField]
+    Text[] dot;
+
     private void Start()
     {
         StartCoroutine(LoadScene());
@@ -45,5 +48,4 @@ public class LoadingSceneManager : MonoBehaviour
         }*/
 
     }
-
 }

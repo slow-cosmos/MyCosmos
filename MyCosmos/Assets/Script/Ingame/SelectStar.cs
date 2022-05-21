@@ -45,6 +45,8 @@ public class SelectStar : MonoBehaviour
 
                         selectScale = 30 / star1.transform.localScale.x;
                         star1.transform.Find("Select").localScale = new Vector3(selectScale, selectScale, selectScale);
+
+                        SoundManage.instance.PlayStarSound();
                     }
                     else if (star1 == hit.collider.gameObject) //별1 체크 취소
                     {
@@ -55,6 +57,8 @@ public class SelectStar : MonoBehaviour
                     {
                         star2 = hit.collider.gameObject;
                         star2.transform.Find("Select").gameObject.SetActive(true);
+
+                        SoundManage.instance.PlayStarSound();
                     }
                     else if (star2 == hit.collider.gameObject) //별2 체크 취소
                     {

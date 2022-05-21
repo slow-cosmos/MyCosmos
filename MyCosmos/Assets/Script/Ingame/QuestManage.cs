@@ -10,10 +10,7 @@ public class QuestManage : MonoBehaviour
     Text constellName, constellDir;
 
     [SerializeField]
-    Image clear;
-
-    [SerializeField]
-    Text clearText;
+    GameObject clear;
 
     [SerializeField]
     Text seasonName;
@@ -120,6 +117,7 @@ public class QuestManage : MonoBehaviour
                 break;
         }
 
+        SoundManage.instance.PlayButtonSound();
     }
 
     void Tab2Init(string season)
@@ -169,24 +167,11 @@ public class QuestManage : MonoBehaviour
                     GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[3] = true;
                     break;
             }
-            StartCoroutine(ClearText());
+
+            clear.gameObject.SetActive(true);
             
         }
     }
 
-    IEnumerator ClearText()
-    {
-        yield return new WaitForSeconds(3f);
-        clear.gameObject.SetActive(true);
-
-        while (clearText.color.a < 1.0f)
-        {
-            clearText.color = new Color(1, 1, 1, clearText.color.a + (Time.deltaTime / 2f));
-            
-        }
-
-        GameObject.Find("UICanvas").transform.Find("ClearButton").gameObject.SetActive(true);
-        yield return null;
-
-    }
+    
 }

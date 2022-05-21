@@ -26,7 +26,7 @@ public class Line : MonoBehaviour
 
     void LineCollider()
     {
-        col.size = new Vector3(5.0f, 5.0f, Vector3.Distance(star1Pos, star2Pos)-5);
+        col.size = new Vector3(7.0f, 7.0f, Vector3.Distance(star1Pos, star2Pos)-15);
         transform.position = (star2Pos + star1Pos) / 2;
         col.transform.LookAt(star2Pos);
     }

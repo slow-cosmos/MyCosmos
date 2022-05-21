@@ -14,11 +14,15 @@ public class LobbyManage : MonoBehaviour
     {
         chapterCanvas.gameObject.SetActive(true);
         lobbyCanvas.gameObject.SetActive(false);
+
+        SoundManage.instance.PlayButtonSound();
     }
 
     public void ExitButton()
     {
         Application.Quit();
+
+        SoundManage.instance.PlayButtonSound();
     }
 
 }

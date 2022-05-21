@@ -28,6 +28,12 @@ public class CameraController : MonoBehaviour
             selectStar.star1.transform.Find("Select").localScale = new Vector3(size, size, size);
         }*/
 
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            rotSpeed = 15;
+            zoomSpeed = 0.1f;
+        }
+
         Rotate();
         Zoom();
     }
@@ -38,6 +44,12 @@ public class CameraController : MonoBehaviour
         {
             float mx = Input.GetAxis("Mouse X");
             float my = Input.GetAxis("Mouse Y");
+
+            if(Input.touchCount==1)
+            {
+                mx = Input.touches[0].deltaPosition.x;
+                my = Input.touches[0].deltaPosition.y;
+            }
 
             rx += rotSpeed * my * Time.deltaTime;
             ry -= rotSpeed * mx * Time.deltaTime;

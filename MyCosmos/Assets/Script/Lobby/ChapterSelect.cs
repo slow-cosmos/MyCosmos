@@ -18,6 +18,8 @@ public class ChapterSelect : MonoBehaviour
         chapterManage.lst = 11.3f + 24;
         chapterManage.chapter = "spring";
         LoadingSceneManager.LoadScene("Ingame");
+
+        SoundManage.instance.PlayButtonSound();
     }
 
     public void SummerSelect()
@@ -25,6 +27,8 @@ public class ChapterSelect : MonoBehaviour
         chapterManage.lst = 17.35f + 24;
         chapterManage.chapter = "summer";
         LoadingSceneManager.LoadScene("Ingame");
+
+        SoundManage.instance.PlayButtonSound();
     }
 
     public void AutumnSelect()
@@ -32,6 +36,8 @@ public class ChapterSelect : MonoBehaviour
         chapterManage.lst = 23.52f + 24;
         chapterManage.chapter = "autumn";
         LoadingSceneManager.LoadScene("Ingame");
+
+        SoundManage.instance.PlayButtonSound();
     }
 
     public void WinterSelect()
@@ -39,6 +45,8 @@ public class ChapterSelect : MonoBehaviour
         chapterManage.lst = 5.44f + 24;
         chapterManage.chapter = "winter";
         LoadingSceneManager.LoadScene("Ingame");
+
+        SoundManage.instance.PlayButtonSound();
     }
 
 }

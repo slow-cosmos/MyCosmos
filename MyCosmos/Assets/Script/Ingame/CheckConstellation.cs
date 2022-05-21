@@ -81,6 +81,7 @@ public class CheckConstellation : ConstellationDatabase
                 }
 
                 Debug.Log(constell_Database[i].name);
+                SoundManage.instance.PlayConstellSound();
                 break;
             }
         }
