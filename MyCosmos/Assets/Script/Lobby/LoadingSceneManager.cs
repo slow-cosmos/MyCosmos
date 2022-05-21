@@ -32,6 +32,24 @@ public class LoadingSceneManager : MonoBehaviour
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = true;
 
+
+        /*float timer = 0.0f;
+        while(!op.isDone)
+        {
+            yield return null;
+
+            timer += Time.deltaTime;
+            for (int i = 0; i < 3; i++)
+            {
+                if(timer>=1.0f)
+                {
+                    dot[i].color = new Color(1, 1, 1, 1);
+                    timer = 0f;
+                }
+            }
+        }*/
+        
+
         /*float timer = 0.0f;
 
         while (!op.isDone)

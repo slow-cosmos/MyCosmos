@@ -765,6 +765,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9003059785707981396, guid: 4b8697da0210a5a47b442d55564d9f95,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -532.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b8697da0210a5a47b442d55564d9f95, type: 3}
 --- !u!1 &1594110365 stripped
@@ -1227,6 +1232,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31603666017012544, guid: bf98fb83aaa58014697bac8c299f9030,
         type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31603666017012544, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31603666017012544, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 31603666017012544, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: StartButton
       objectReference: {fileID: 0}
@@ -1365,6 +1385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3399810094790356392, guid: bf98fb83aaa58014697bac8c299f9030,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3674511834566731979, guid: bf98fb83aaa58014697bac8c299f9030,
         type: 3}

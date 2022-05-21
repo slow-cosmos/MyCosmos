@@ -1722,4 +1722,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Loading.unity
   - Assets/Scenes/Ingame.unity
-  playerPath: "C:/Users/juring/Desktop/\uC0C8 \uD3F4\uB354 (4)/MyCosmos.exe"
+  playerPath: C:/Users/juring/Desktop/My Cosmos/MyCosmos.exe
