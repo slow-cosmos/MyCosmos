@@ -8,15 +8,15 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: JUHEE
   productName: MyCosmos
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 8aa909f3cb070f64489ce6254ffdcb76, type: 3}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.18039216, b: 0.25490198, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -39,7 +39,9 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos: []
+  m_SplashScreenLogos:
+  - logo: {fileID: 21300000, guid: 30c95463f14d6b7429777d6ba0e3a66e, type: 3}
+    duration: 2
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1200
@@ -267,7 +269,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 3a947196bdf7b3f488adca891a20b5be, type: 3}
+      m_Icon: {fileID: 2800000, guid: 693d728fabed12843b2bfdd352aa1899, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
