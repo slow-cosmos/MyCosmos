@@ -9,16 +9,19 @@ public class SelectStar : MonoBehaviour
     public Camera getCamera;
     RaycastHit hit;
     LineManage lineManage;
+    SelectCircle selectCircle;
 
     Quaternion curCameraRotation, newCameraRotation;
 
     public GameObject star1, star2;
     public float selectScale;
 
+
     void Start()
     {
         lineManage = GameObject.Find("LineManage").GetComponent<LineManage>();
         curCameraRotation = getCamera.transform.rotation; //현재 카메라 rotation
+        selectCircle = GameObject.Find("WorldSpaceCanvas").transform.Find("SelectCircle").GetComponent<SelectCircle>();
     }
 
     void Update()
@@ -41,29 +44,34 @@ public class SelectStar : MonoBehaviour
                     if (star1 == null)
                     { //별1 체크
                         star1 = hit.collider.gameObject;
-                        star1.transform.Find("Select").gameObject.SetActive(true);
+                        
+                        //star1.transform.Find("Select").gameObject.SetActive(true);
+                        //selectScale = 30 / star1.transform.localScale.x;
+                        //star1.transform.Find("Select").localScale = new Vector3(selectScale, selectScale, selectScale);
 
-                        selectScale = 30 / star1.transform.localScale.x;
-                        star1.transform.Find("Select").localScale = new Vector3(selectScale, selectScale, selectScale);
+                        selectCircle.SpawnCircle(star1);
 
                         SoundManage.instance.PlayStarSound();
                     }
                     else if (star1 == hit.collider.gameObject) //별1 체크 취소
                     {
-                        star1.transform.Find("Select").gameObject.SetActive(false);
+                        //star1.transform.Find("Select").gameObject.SetActive(false);
                         star1 = null;
+
+                        selectCircle.RemoveCircle();
                     }
                     else if (star2 == null) //별2 체크
                     {
                         star2 = hit.collider.gameObject;
-                        star2.transform.Find("Select").gameObject.SetActive(true);
 
                         SoundManage.instance.PlayStarSound();
                     }
                     else if (star2 == hit.collider.gameObject) //별2 체크 취소
                     {
-                        star2.transform.Find("Select").gameObject.SetActive(false);
+                        //star2.transform.Find("Select").gameObject.SetActive(false);
                         star2 = null;
+
+                        selectCircle.RemoveCircle();
                     }
                 }
                 
@@ -74,13 +82,17 @@ public class SelectStar : MonoBehaviour
                 {
                     if (star1)
                     {
-                        star1.transform.Find("Select").gameObject.SetActive(false);
+                        //star1.transform.Find("Select").gameObject.SetActive(false);
                         star1 = null;
+
+                        selectCircle.RemoveCircle();
                     }
                     if (star2)
                     {
-                        star2.transform.Find("Select").gameObject.SetActive(false);
+                        //star2.transform.Find("Select").gameObject.SetActive(false);
                         star2 = null;
+
+                        selectCircle.RemoveCircle();
                     }
                 }
                 else
@@ -94,8 +106,10 @@ public class SelectStar : MonoBehaviour
         {
             lineManage.LineSpawner(star1, star2);
 
-            star1.transform.Find("Select").gameObject.SetActive(false);
-            star2.transform.Find("Select").gameObject.SetActive(false);
+            //star1.transform.Find("Select").gameObject.SetActive(false);
+            //star2.transform.Find("Select").gameObject.SetActive(false);
+
+            selectCircle.RemoveCircle();
 
             star1 = null;
             star2 = null;

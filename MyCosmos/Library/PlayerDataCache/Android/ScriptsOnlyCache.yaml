@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BackgroundSize
     - CameraController
     - ChapterManage
     - ChapterSelect
@@ -9,6 +10,7 @@ ScriptsOnlyBuild:
     - ClearManage
     - ConstellationDatabase
     - CreateStar
+    - CursorManage
     - DragThreshold
     - Line
     - LineManage
@@ -85,6 +87,7 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
@@ -137,17 +140,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 780}
+      Script: {instanceID: 782}
     - Class: 114
-      Script: {instanceID: 11440}
-    - Class: 114
-      Script: {instanceID: 11444}
+      Script: {instanceID: 11442}
     - Class: 114
       Script: {instanceID: 11446}
     - Class: 114
       Script: {instanceID: 11448}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11450}
+    - Class: 114
+      Script: {instanceID: 11456}
     - Class: 114
       Script: {instanceID: 11460}
     - Class: 114
@@ -181,25 +184,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14352}
     - Class: 114
-      Script: {instanceID: 14930}
+      Script: {instanceID: 14932}
     - Class: 114
-      Script: {instanceID: 15156}
+      Script: {instanceID: 15158}
     - Class: 114
-      Script: {instanceID: 15216}
+      Script: {instanceID: 15218}
     - Class: 114
-      Script: {instanceID: 16216}
+      Script: {instanceID: 16218}
     - Class: 114
-      Script: {instanceID: 16802}
+      Script: {instanceID: 16804}
     - Class: 114
-      Script: {instanceID: 16940}
+      Script: {instanceID: 16806}
     - Class: 114
-      Script: {instanceID: 16986}
+      Script: {instanceID: 16944}
     - Class: 114
-      Script: {instanceID: 17318}
+      Script: {instanceID: 16990}
     - Class: 114
-      Script: {instanceID: 17438}
+      Script: {instanceID: 17194}
     - Class: 114
-      Script: {instanceID: 17468}
+      Script: {instanceID: 17322}
+    - Class: 114
+      Script: {instanceID: 17442}
+    - Class: 114
+      Script: {instanceID: 17472}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -248,11 +255,11 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
-    - Class: 114
       Script: {instanceID: 11448}
     - Class: 114
-      Script: {instanceID: 11454}
+      Script: {instanceID: 11450}
+    - Class: 114
+      Script: {instanceID: 11456}
     - Class: 114
       Script: {instanceID: 13280}
     - Class: 114
@@ -260,7 +267,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13416}
     - Class: 114
-      Script: {instanceID: 17318}
+      Script: {instanceID: 17322}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -305,9 +312,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 780}
-    - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 782}
     - Class: 114
       Script: {instanceID: 11442}
     - Class: 114
@@ -322,6 +327,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11452}
     - Class: 114
       Script: {instanceID: 11454}
+    - Class: 114
+      Script: {instanceID: 11456}
     - Class: 114
       Script: {instanceID: 11650}
     - Class: 114
@@ -359,47 +366,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14260}
     - Class: 114
-      Script: {instanceID: 14746}
+      Script: {instanceID: 14736}
     - Class: 114
-      Script: {instanceID: 15206}
+      Script: {instanceID: 14748}
     - Class: 114
-      Script: {instanceID: 15316}
+      Script: {instanceID: 15208}
     - Class: 114
-      Script: {instanceID: 15342}
+      Script: {instanceID: 15318}
     - Class: 114
-      Script: {instanceID: 15528}
+      Script: {instanceID: 15344}
     - Class: 114
-      Script: {instanceID: 15580}
+      Script: {instanceID: 15530}
     - Class: 114
-      Script: {instanceID: 15592}
+      Script: {instanceID: 15582}
     - Class: 114
-      Script: {instanceID: 15782}
+      Script: {instanceID: 15594}
     - Class: 114
-      Script: {instanceID: 16058}
+      Script: {instanceID: 15784}
     - Class: 114
-      Script: {instanceID: 16140}
+      Script: {instanceID: 16060}
     - Class: 114
-      Script: {instanceID: 16164}
+      Script: {instanceID: 16142}
     - Class: 114
-      Script: {instanceID: 16578}
+      Script: {instanceID: 16166}
     - Class: 114
-      Script: {instanceID: 16864}
+      Script: {instanceID: 16580}
     - Class: 114
-      Script: {instanceID: 16942}
+      Script: {instanceID: 16804}
     - Class: 114
-      Script: {instanceID: 17126}
+      Script: {instanceID: 16868}
     - Class: 114
-      Script: {instanceID: 17262}
+      Script: {instanceID: 16946}
+    - Class: 114
+      Script: {instanceID: 17130}
+    - Class: 114
+      Script: {instanceID: 17194}
     - Class: 114
       Script: {instanceID: 17266}
     - Class: 114
-      Script: {instanceID: 17318}
+      Script: {instanceID: 17270}
     - Class: 114
-      Script: {instanceID: 17354}
+      Script: {instanceID: 17322}
     - Class: 114
-      Script: {instanceID: 17540}
+      Script: {instanceID: 17358}
     - Class: 114
-      Script: {instanceID: 17546}
+      Script: {instanceID: 17544}
+    - Class: 114
+      Script: {instanceID: 17550}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1125,6 +1138,12 @@ ScriptsOnlyBuild:
     className: VolumeProfile
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BackgroundSize
+  - hash:
+      serializedVersion: 2
       Hash: 0c9920fb850aff7b5ec756815b7a6fc1
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
@@ -1477,6 +1496,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
     className: DepthOfField
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CursorManage
   - hash:
       serializedVersion: 2
       Hash: f450bd92c660880e07a6cb4e4f93cd6d

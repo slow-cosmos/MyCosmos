@@ -14,6 +14,9 @@ public class CameraController : MonoBehaviour
 
     SelectStar selectStar;
 
+    [SerializeField]
+    GameObject selectCircle;
+
     void Start()
     {
         camera = gameObject.GetComponent<Camera>();
@@ -31,7 +34,7 @@ public class CameraController : MonoBehaviour
         if (Application.platform == RuntimePlatform.Android)
         {
             rotSpeed = 15;
-            zoomSpeed = 0.1f;
+            zoomSpeed = 0.08f;
         }
 
         Rotate();
@@ -40,19 +43,33 @@ public class CameraController : MonoBehaviour
 
     void Rotate()
     {
-        if (Input.GetMouseButton(0)) //드래그 회전
+        if(Application.platform == RuntimePlatform.Android) //터치 회전
+        {
+            if(Input.touchCount==1 && Input.GetTouch(0).phase==TouchPhase.Moved)
+            {
+                float mx = Input.GetAxis("Mouse X");
+                float my = Input.GetAxis("Mouse Y");
+
+                mx = Input.touches[0].deltaPosition.x;
+                my = Input.touches[0].deltaPosition.y;
+
+                rx += rotSpeed * my * Time.deltaTime * (camera.fieldOfView * 0.01f);
+                ry -= rotSpeed * mx * Time.deltaTime * (camera.fieldOfView * 0.01f);
+
+                if (rx < -90) rx = -90;
+                if (rx > 0) rx = 0;
+
+                transform.eulerAngles = new Vector3(-rx, ry, 0);
+            }
+        }
+
+        else if (Input.GetMouseButton(0)) //드래그 회전
         {
             float mx = Input.GetAxis("Mouse X");
             float my = Input.GetAxis("Mouse Y");
 
-            if(Input.touchCount==1)
-            {
-                mx = Input.touches[0].deltaPosition.x;
-                my = Input.touches[0].deltaPosition.y;
-            }
-
-            rx += rotSpeed * my * Time.deltaTime;
-            ry -= rotSpeed * mx * Time.deltaTime;
+            rx += rotSpeed * my * Time.deltaTime * (camera.fieldOfView * 0.01f);
+            ry -= rotSpeed * mx * Time.deltaTime * (camera.fieldOfView * 0.01f);
 
             if (rx < -90) rx = -90;
             if (rx > 0) rx = 0;
@@ -124,7 +141,9 @@ public class CameraController : MonoBehaviour
                 camera.fieldOfView = 80;
             }
         }
+
+        float circleSize = camera.fieldOfView * 0.01f;
+        selectCircle.transform.localScale = new Vector3(circleSize, circleSize, circleSize);
         
     }
-
 }
