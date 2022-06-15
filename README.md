@@ -36,3 +36,6 @@
 ## 다운로드 링크
 [My Cosmos](https://drive.google.com/file/d/19bDRRGLv9tIfDUsZIgZRhdpyhoIaJi_d/view?usp=sharing)
 (압축 풀기 후 exe 실행)
+
+## 게임 소개 영상
+[Youtube](https://youtube.com/shorts/-PJ5V7esZ9Q?feature=share)
