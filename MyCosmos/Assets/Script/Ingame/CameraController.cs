@@ -17,6 +17,15 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     GameObject selectCircle;
 
+    void Awake()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            rotSpeed = 4;
+            zoomSpeed = 0.08f;
+        }
+    }
+
     void Start()
     {
         camera = gameObject.GetComponent<Camera>();
@@ -30,12 +39,6 @@ public class CameraController : MonoBehaviour
             float size = camera.fieldOfView / selectStar.selectScale;
             selectStar.star1.transform.Find("Select").localScale = new Vector3(size, size, size);
         }*/
-
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            rotSpeed = 15;
-            zoomSpeed = 0.08f;
-        }
 
         Rotate();
         Zoom();
