@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManage : MonoBehaviour
 {
     public static SoundManage instance;
 
-    public AudioSource audioSource;
+    public AudioSource audioSource, bgmAudioSource;
     public AudioClip buttonSound, starSound, constellSound;
+
+    public bool onSFX=true, onBGM=true;
 
     private void Awake()
     {
@@ -19,23 +22,37 @@ public class SoundManage : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        bgmAudioSource = GameObject.Find("BGM").GetComponent<AudioSource>();
     }
 
     public void PlayButtonSound()
     {
-        audioSource.volume = 0.3f;
+        audioSource.volume = onSFX ? 0.3f : 0;
         audioSource.PlayOneShot(buttonSound);
     }
 
     public void PlayStarSound()
     {
-        audioSource.volume = 0.1f;
+        audioSource.volume = onSFX ? 0.1f : 0;
         audioSource.PlayOneShot(starSound);
     }
     
     public void PlayConstellSound()
     {
-        audioSource.volume = 0.3f;
+        audioSource.volume = onSFX ? 0.3f : 0;
         audioSource.PlayOneShot(constellSound);
+    }
+
+    public void BGM()
+    {
+        if (onBGM)
+        {
+            bgmAudioSource.volume = 0.3f;
+        }
+        else
+        {
+            bgmAudioSource.volume = 0;
+        }
     }
 }
