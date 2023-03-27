@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    //https://backback.tistory.com/425
-
     public float rotSpeed = 1;
     public float zoomSpeed = 10;
 
     private float rx, ry;
     private Camera camera;
-
-    SelectStar selectStar;
-
+    
     [SerializeField]
     GameObject selectCircle;
 
@@ -21,7 +17,7 @@ public class CameraController : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            rotSpeed = 4;
+            rotSpeed = 3;
             zoomSpeed = 0.08f;
         }
     }
@@ -29,17 +25,10 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         camera = gameObject.GetComponent<Camera>();
-        selectStar = GameObject.Find("StarSelect").GetComponent<SelectStar>();
     }
 
     void Update()
     {
-        /*if (selectStar.star1 != null)
-        {
-            float size = camera.fieldOfView / selectStar.selectScale;
-            selectStar.star1.transform.Find("Select").localScale = new Vector3(size, size, size);
-        }*/
-
         Rotate();
         Zoom();
     }

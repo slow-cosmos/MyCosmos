@@ -19,7 +19,6 @@ public class CreateStar : MonoBehaviour
     public float lst;
     float lat = 37.582474f;
 
-    // Start is called before the first frame update
     void Start()
     {
         sdb = GameObject.Find("StarDatabase").GetComponent<StarDatabase>();

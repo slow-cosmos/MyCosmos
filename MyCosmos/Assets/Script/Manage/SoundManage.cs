@@ -22,8 +22,6 @@ public class SoundManage : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-        bgmAudioSource = GameObject.Find("BGM").GetComponent<AudioSource>();
     }
 
     public void PlayButtonSound()

@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 291678456}
   - component: {fileID: 291678455}
   m_Layer: 0
-  m_Name: IntroSound
+  m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1639,7 +1639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapterCanvas: {fileID: 6466594451952652893}
   lobbyCanvas: {fileID: 4664035881414320000}
-  background: {fileID: 0}
 --- !u!114 &1891866873929836666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2446,7 +2445,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapterCanvas: {fileID: 6466594451952652893}
   lobbyCanvas: {fileID: 4664035881414320000}
-  background: {fileID: 0}
 --- !u!114 &5016542441125251737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,7 +2459,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chapterCanvas: {fileID: 0}
   lobbyCanvas: {fileID: 0}
-  background: {fileID: 0}
 --- !u!114 &5016542441125251742
 MonoBehaviour:
   m_ObjectHideFlags: 0

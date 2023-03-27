@@ -1,7 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - BackgroundSize
     - CameraController
     - ChapterManage
     - ChapterSelect
@@ -194,6 +193,12 @@ ScriptsOnlyBuild:
   - assembly: Unity.RenderPipelines.Core.Runtime
     fullTypeName: UnityEngine.Rendering.UI.DebugUIHandlerPanel
     methodName: ResetDebugManager
+  - assembly: Assembly-CSharp
+    fullTypeName: UIButton
+    methodName: Tab1
+  - assembly: Assembly-CSharp
+    fullTypeName: UIButton
+    methodName: Tab2
   sceneClasses:
     Assets/Scenes/Ingame.unity:
     - Class: 1
@@ -379,8 +384,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -477,8 +480,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6210}
     - Class: 114
-      Script: {instanceID: 6326}
-    - Class: 114
       Script: {instanceID: 6328}
     - Class: 114
       Script: {instanceID: 6350}
@@ -539,8 +540,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -1335,7 +1334,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: ec71ca7dd3cdae489223f22f1df7ca9e
+      Hash: 05e4a8bfd9f3cc2884048ddf5344fcdf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LobbyManage
@@ -2064,4 +2063,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Loading.unity
   - Assets/Scenes/Ingame.unity
-  playerPath: C:/Users/juring/Desktop/My Cosmos.aab
+  playerPath: "C:/Users/juring/Desktop/\uD14C\uC2A4\uD2B8 apk/MyCosmos_1.apk"

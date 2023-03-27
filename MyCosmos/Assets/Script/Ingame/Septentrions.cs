@@ -5,12 +5,12 @@ using UnityEngine;
 public class Septentrions : MonoBehaviour
 {
     ConstellationDatabase constellationDatabase;
-    LineManage lineManage;
+    ConnectStar connectStar;
     // 북두칠성 그리기
     void Start()
     {
         constellationDatabase = GameObject.Find("ConstellationDatabase").GetComponent<ConstellationDatabase>();
-        lineManage = GameObject.Find("LineManage").GetComponent<LineManage>();
+        connectStar = GameObject.Find("ConnectStar").GetComponent<ConnectStar>();
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class Septentrions : MonoBehaviour
             GameObject star1Obj, star2Obj;
             star1Obj = GameObject.Find(star1);
             star2Obj = GameObject.Find(star2);
-            lineManage.LineSpawner(star1Obj, star2Obj);
+            connectStar.LineSpawner(star1Obj, star2Obj);
         }
     }
 }
