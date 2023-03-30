@@ -20,6 +20,8 @@ public class LobbyManage : MonoBehaviour
 
     public void ExitButton()
     {
+        DataManage.Instance.SaveGameData();
+
         Application.Quit();
 
         SoundManage.instance.PlayButtonSound();

@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class LoadingSceneManager : MonoBehaviour
 {
     public static string nextScene;
 
-    //[SerializeField]
-    //Image progressBar;
-
     [SerializeField]
-    Text[] dot;
+    Text dot;
 
     private void Start()
     {
@@ -30,25 +28,11 @@ public class LoadingSceneManager : MonoBehaviour
         yield return null;
 
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
-        op.allowSceneActivation = true;
+        op.allowSceneActivation = false;
 
-
-        /*float timer = 0.0f;
-        while(!op.isDone)
-        {
-            yield return null;
-
-            timer += Time.deltaTime;
-            for (int i = 0; i < 3; i++)
-            {
-                if(timer>=1.0f)
-                {
-                    dot[i].color = new Color(1, 1, 1, 1);
-                    timer = 0f;
-                }
-            }
-        }*/
-        
+        dot.DOText("...",1.5f).SetLoops(2,LoopType.Restart).OnComplete(()=>{
+            op.allowSceneActivation=true;
+        });
 
         /*float timer = 0.0f;
 

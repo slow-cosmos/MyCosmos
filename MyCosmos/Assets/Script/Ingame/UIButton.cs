@@ -50,6 +50,8 @@ public class UIButton : MonoBehaviour
 
     public void LobbyBtn()
     {
+        DataManage.Instance.SaveGameData();
+        
         SceneManager.LoadScene("Lobby");
 
         SoundManage.instance.PlayButtonSound();
@@ -63,7 +65,6 @@ public class UIButton : MonoBehaviour
 
         SoundManage.instance.PlayButtonSound();
     }
-
 
     public void Tab1()
     {

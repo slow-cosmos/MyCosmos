@@ -2,28 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class CheckConstellation : ConstellationDatabase
 {
-    ChapterManage chapterManage;
-
     [SerializeField]
-    GameObject questGroup;
+    QuestUI questUI;
 
     [SerializeField]
     Text constellText;
 
     List<string> constell_arr = new List<string>();
-    //List<bool> findCheck=new List<bool>();
-    public constell_type[] constell_Database;
+    public constell_type[] constell_Database; // 현재 찾아야 할 별자리 데이터베이스
 
     bool check;
 
     void Start()
     {
-        chapterManage = GameObject.Find("ChapterManage").GetComponent<ChapterManage>();
+        //퀘스트 클리어 로드
+        DataManage.Instance.LoadChapterData();
 
-        switch (chapterManage.chapter) //챕터별 별자리
+        //챕터별 별자리
+        switch (ChapterManage.Instance.chapter) 
         {
             case "spring":
                 constell_Database = base.springConstell;
@@ -38,11 +38,6 @@ public class CheckConstellation : ConstellationDatabase
                 constell_Database = base.winterConstell;
                 break;
         }
-
-        /*for(int i=0;i< constell_Database.Length;i++)
-        {
-            findCheck.Add(false);
-        }*/
     }
 
     public void Check()
@@ -59,12 +54,10 @@ public class CheckConstellation : ConstellationDatabase
                 temp = GameObject.Find(constell_Database[i].construction[j]);
                 if (temp)
                 {
-                    //Debug.Log(j+":"+constell_Database[i].construction[j] + ":" + "Found");
                     check = true;
                 }
                 else
                 {
-                    //Debug.Log(j+":"+constell_Database[i].construction[j] + ":" + "Not Found");
                     check = false;
                     break;
                 }
@@ -72,40 +65,27 @@ public class CheckConstellation : ConstellationDatabase
             if(check==true)
             {
                 constell_Database[i].check = true;
-                questGroup.transform.Find(constell_Database[i].name).GetComponent<Toggle>().isOn = true; //별자리를 찾으면 체크
-                StartCoroutine(FadeInConstellText(constell_Database[i].krName)); //찾은 별자리 이름 뜨게하기
 
-                for (int j = 0; j < constell_Database[i].construction.Count; j++) //찾은 별자리는 클릭해도 선 안 없어지게
+                //찾은 별자리 이름 뜨게하기
+                constellText.text = constell_Database[i].krName;
+                Sequence sequence = DOTween.Sequence()
+                .Append(constellText.DOFade(1,2f))
+                .Append(constellText.DOFade(0,2f));
+
+                //찾은 별자리는 클릭해도 선 안 없어지게
+                for (int j = 0; j < constell_Database[i].construction.Count; j++)
                 {
                     Destroy(GameObject.Find(constell_Database[i].construction[j]).transform.GetChild(0).gameObject.GetComponent<BoxCollider>());
                 }
 
                 Debug.Log(constell_Database[i].name);
+
+                //별자리 찾는 효과음
                 SoundManage.instance.PlayConstellSound();
-                break;
+
+                //퀘스트 클리어 저장
+                DataManage.Instance.SaveChapterData();
             }
-        }
-    }
-
-    IEnumerator FadeInConstellText(string name)
-    {
-        constellText.text = name;
-
-        while (constellText.color.a < 1.0f)
-        {
-            constellText.color = new Color(1,1,1, constellText.color.a + (Time.deltaTime / 2f));
-            yield return null;
-        }
-        
-        StartCoroutine(FadeOutConstellText(name));
-    }
-
-    IEnumerator FadeOutConstellText(string name)
-    {
-        while (constellText.color.a > 0.0f)
-        {
-            constellText.color = new Color(1, 1, 1, constellText.color.a - (Time.deltaTime / 2f));
-            yield return null;
         }
     }
 }

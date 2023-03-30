@@ -13,9 +13,9 @@ public class Cheat : MonoBehaviour
         connectStar = GameObject.Find("ConnectStar").GetComponent<ConnectStar>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
         if(Input.GetKey(KeyCode.T))
         {
             for(int i=0;i<checkConstellation.constell_Database.Length;i++)
@@ -57,4 +57,5 @@ public class Cheat : MonoBehaviour
             }
         }
     }
+#endif
 }

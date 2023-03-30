@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class ConnectStar : MonoBehaviour
 {
-    //https://the-pond.tistory.com/12 선택
-
     public Camera getCamera;
     RaycastHit hit;
-    //LineManage lineManage;
     
     Quaternion curCameraRotation, newCameraRotation;
 
@@ -21,9 +18,11 @@ public class ConnectStar : MonoBehaviour
     [SerializeField]
     SelectCircle selectCircle;
 
+    CheckConstellation checkConstellation;
 
     void Start()
     {
+        MakeConstellation();
         curCameraRotation = getCamera.transform.rotation; //현재 카메라 rotation
     }
 
@@ -31,7 +30,7 @@ public class ConnectStar : MonoBehaviour
     {
         newCameraRotation = getCamera.transform.rotation;
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && GameManage.Instance.gameState == GameState.PLAY)
         {
             Ray ray = getCamera.ScreenPointToRay(Input.mousePosition);
   
@@ -108,7 +107,44 @@ public class ConnectStar : MonoBehaviour
         }
     }
 
-    public void LineSpawner(GameObject star1, GameObject star2)
+    // 클리어 된 퀘스트는 별자리 그리기
+    public void MakeConstellation()
+    {
+        checkConstellation = GameObject.Find("CheckConstellation").GetComponent<CheckConstellation>();
+        for(int i=0;i<checkConstellation.constell_Database.Length;i++)
+        {
+            if(checkConstellation.constell_Database[i].check == false) continue;
+            for(int j=0;j<checkConstellation.constell_Database[i].construction.Count;j++)
+            {
+                string star1="", star2="";
+                bool check = false;
+                for (int k = 0; k < checkConstellation.constell_Database[i].construction[j].Length; k++)
+                {
+                    if (checkConstellation.constell_Database[i].construction[j][k] != '-' && check == false)
+                    {
+                        star1 += checkConstellation.constell_Database[i].construction[j][k];
+                    }
+                    else if (checkConstellation.constell_Database[i].construction[j][k] != '-' && check == true)
+                    {
+                        star2 += checkConstellation.constell_Database[i].construction[j][k];
+                    }
+                    else
+                    {
+                        check = true;
+                    }
+                }
+                GameObject star1Obj, star2Obj;
+                star1Obj = GameObject.Find(star1);
+                star2Obj = GameObject.Find(star2);
+                LineSpawner(star1Obj, star2Obj, false);
+
+                //찾은 별자리는 클릭해도 선 안 없어지게
+                Destroy(GameObject.Find(checkConstellation.constell_Database[i].construction[j]).transform.GetChild(0).gameObject.GetComponent<BoxCollider>());
+            }
+        }
+    }
+
+    public void LineSpawner(GameObject star1, GameObject star2, bool checkFlag=true)
     {
         //하이어라키 순서 정렬
         GameObject startStar = star1.GetComponent<Star>().index < star2.GetComponent<Star>().index ? star1 : star2;
@@ -133,9 +169,12 @@ public class ConnectStar : MonoBehaviour
         //star1star2로 이름변경
         line.gameObject.name = startStar.name +"-"+ endStar.name;
 
-        Debug.Log(line.gameObject.name);
-        GameObject.Find("CheckConstellation").GetComponent<CheckConstellation>().Check();
-        
+        //Debug.Log(line.gameObject.name);
+
+        if(checkFlag == false) return;
+
+        //선 생성할 때마다 별자리 확인하기
+        checkConstellation.GetComponent<CheckConstellation>().Check();
     }
 
     public void LineDestroy(GameObject line)

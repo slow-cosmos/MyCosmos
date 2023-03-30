@@ -21,9 +21,8 @@ public class StarDatabase : MonoBehaviour
 
     public List<stars_type> star_Database = new List<stars_type>();
 
-    void Start()
+    void Awake()
     {
-
         List<Dictionary<string, object>> data = CSVReader.Read("hygdata_v3");
 
         for (var i = 0; i < data.Count; i++)

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class QuestManage : MonoBehaviour
+public class QuestUI : MonoBehaviour
 {
     [SerializeField]
     Text constellName, constellDir;
@@ -31,8 +31,9 @@ public class QuestManage : MonoBehaviour
     public GameObject questGroup;
     public CheckConstellation checkConstellation;
 
+    List<Toggle> questList = new List<Toggle>();
+
     public float gap = 60;
-    //public float questNum = 5;
 
     string season;
 
@@ -62,14 +63,19 @@ public class QuestManage : MonoBehaviour
         Tab2Init(season);
     }
 
-    void LateUpdate()
+    void Update()
     {
-        CheckChapterClear();
+        // 퀘스트 클리어 토글에 반영
+        for (int i = 0; i < checkConstellation.constell_Database.Length; i++)
+        {
+            questList[i].isOn = checkConstellation.constell_Database[i].check;
+        }
     }
 
     //퀘스트 생성
     void QuestInit()
     {
+        questList.Clear();
         for (int i = 0; i < checkConstellation.constell_Database.Length; i++)
         {
             Toggle quest = Instantiate(togglePrefab);
@@ -78,14 +84,16 @@ public class QuestManage : MonoBehaviour
             quest.transform.localPosition = new Vector3(0f, 330 - i * gap, 0f);
             quest.transform.localScale = new Vector3(1, 1, 1);
             quest.name = checkConstellation.constell_Database[i].name;
-            //quest.GetComponent<RectTransform>().sizeDelta = new Vector2(250f, 20f);
 
             int index = i;
             string name = checkConstellation.constell_Database[i].krName;
             quest.transform.Find("Label").GetComponent<Button>().onClick.AddListener(() => ConstellBtn(index, name));
+            quest.transform.Find("Background").GetComponent<Button>().onClick.AddListener(() => ConstellBtn(index, name));
 
-            quest.isOn = false; 
-            quest.interactable = false; 
+            quest.isOn = checkConstellation.constell_Database[i].check; 
+            quest.interactable = false;
+
+            questList.Add(quest);
         }
     }
 
@@ -120,6 +128,7 @@ public class QuestManage : MonoBehaviour
         SoundManage.instance.PlayButtonSound();
     }
 
+    // 전체 별자리 탭
     void Tab2Init(string season)
     {
         switch(season)
@@ -142,36 +151,4 @@ public class QuestManage : MonoBehaviour
                 break;
         }
     }
-
-    void CheckChapterClear()
-    {
-        bool check = true;
-        for(int i=0;i< questGroup.transform.childCount;i++)
-        {
-            if (questGroup.transform.GetChild(i).GetComponent<Toggle>().isOn == false) check = false;
-        }
-        if(check==true)
-        {
-            switch(season)
-            {
-                case "spring":
-                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[0] = true;
-                    break;
-                case "summer":
-                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[1] = true;
-                    break;
-                case "autumn":
-                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[2] = true;
-                    break;
-                case "winter":
-                    GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapterClear[3] = true;
-                    break;
-            }
-
-            clear.gameObject.SetActive(true);
-            
-        }
-    }
-
-    
 }

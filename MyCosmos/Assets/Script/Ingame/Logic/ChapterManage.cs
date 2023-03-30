@@ -8,7 +8,7 @@ public class ChapterManage : MonoBehaviour
     public float lst;
     public string chapter;
 
-    public bool[] chapterClear;
+    public bool[] chapterClear = new bool[4];
 
     private void Awake()
     {
@@ -20,5 +20,7 @@ public class ChapterManage : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        DataManage.Instance.LoadGameData();
     }
 }

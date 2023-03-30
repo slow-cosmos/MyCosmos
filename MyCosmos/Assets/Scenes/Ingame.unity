@@ -712,7 +712,7 @@ GameObject:
   - component: {fileID: 246000179}
   - component: {fileID: 246000178}
   m_Layer: 5
-  m_Name: Text
+  m_Name: ConstellText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -905,15 +905,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 362430361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f32e4143cd69a544590a8d88f7e629ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 082aed37009229f4590587d8b473605b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  background: {fileID: 360123377}
-  clearButton: {fileID: 529761299}
-  clearText: {fileID: 1108098909}
-  clearButtonText: {fileID: 1266438240}
   clearBtn: {fileID: 529761298}
-  fadeTime: 5
+  clearText: {fileID: 1108098909}
+  background: {fileID: 360123377}
 --- !u!1 &393576968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -60.00006}
+  m_AnchoredPosition: {x: 0, y: -80}
   m_SizeDelta: {x: 250, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529761297
@@ -3217,7 +3214,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 720, y: 1280}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.9
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3591,8 +3588,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406020220}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.2869155}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3602,58 +3599,14 @@ RectTransform:
   - {fileID: 1500580200}
   - {fileID: 1196431740}
   - {fileID: 1999577700}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 2028401598}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -397.91302, y: -499.2404}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1430067090
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1430067092}
-  - component: {fileID: 1430067091}
-  m_Layer: 0
-  m_Name: StarDatabase
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1430067091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430067090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b488d6a379451234084239b1a798afd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1430067092
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430067090}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.733942, y: -997.6557, z: -4.935644}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2095538663}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432792635
 GameObject:
   m_ObjectHideFlags: 0
@@ -3684,7 +3637,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2095538663}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1432792637
 MonoBehaviour:
@@ -3698,7 +3651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b999849db454934c9bd474235b850e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questGroup: {fileID: 1115441953}
+  questUI: {fileID: 0}
   constellText: {fileID: 246000178}
 --- !u!1 &1474075805
 GameObject:
@@ -4191,289 +4144,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!1 &1734099110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1734099111}
-  - component: {fileID: 1734099112}
-  m_Layer: 0
-  m_Name: QuestManage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1734099111
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734099110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2095538663}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1734099112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734099110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63e819ac563572c4face71e20b7f682c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  constellName: {fileID: 1119602823}
-  constellDir: {fileID: 1806258664}
-  clear: {fileID: 362430361}
-  seasonName: {fileID: 1024222190}
-  skyImage: {fileID: 839191181}
-  constellImage: {fileID: 1388352990}
-  skySprites:
-  - {fileID: 21300000, guid: cffe5cbb769721c4687cb6ca6abc4c5c, type: 3}
-  - {fileID: 21300000, guid: 878461e2e8e48ce48a65a4788f1b9c91, type: 3}
-  - {fileID: 21300000, guid: 99a266c51def66e428d1d5c92de0deff, type: 3}
-  - {fileID: 21300000, guid: da23f78566924c246a67a86174bd2943, type: 3}
-  springSprites:
-  - {fileID: 21300000, guid: b35bca03a8ee9e6408ba724ee7f0674e, type: 3}
-  - {fileID: 21300000, guid: c3239a855ffcbd2418f85895d9603b1a, type: 3}
-  - {fileID: 21300000, guid: 1c5a276fc52a69047b4d107dee66f2cd, type: 3}
-  - {fileID: 21300000, guid: 3f7b1f35b6743c641bf2f7f7e42913cd, type: 3}
-  - {fileID: 21300000, guid: 939bd034ad8bc7d438fc8691ac111d83, type: 3}
-  - {fileID: 21300000, guid: 3c59dfbe9d40f2f47accb3bfc29688fb, type: 3}
-  - {fileID: 21300000, guid: 9c44a6f3f3268dd4391ea8818a1963d8, type: 3}
-  - {fileID: 21300000, guid: bee2791af7c49354482975e997ba4226, type: 3}
-  - {fileID: 21300000, guid: e835f602b1864d341a84b76f8bc650a0, type: 3}
-  - {fileID: 21300000, guid: c9b74e4ccbee9ad4d87a079145c7c46c, type: 3}
-  summerSprites:
-  - {fileID: 21300000, guid: c90e86d35e1e5f4448ddad5cda917780, type: 3}
-  - {fileID: 21300000, guid: b3424ce7ddf7dae41a6b6c61e7f5b890, type: 3}
-  - {fileID: 21300000, guid: 560a515ccad199747a098969d2e52fc3, type: 3}
-  - {fileID: 21300000, guid: 22ca9011057f67d4aa1f29f9a962c05a, type: 3}
-  - {fileID: 21300000, guid: c8b00ccb94582424bba354af6e27cea7, type: 3}
-  - {fileID: 21300000, guid: 3bb4797a3d5d05c43b96a91077465c00, type: 3}
-  - {fileID: 21300000, guid: e97078ee039a0a34b926a2691d7b0a32, type: 3}
-  - {fileID: 21300000, guid: e56b6d82025798a46bf56ff4ab6f81ff, type: 3}
-  - {fileID: 21300000, guid: 236b0c026a59a1b41acb5e4d98779f80, type: 3}
-  - {fileID: 21300000, guid: c3394500c9feb39489910ee7a00ac122, type: 3}
-  autumnSprites:
-  - {fileID: 21300000, guid: 3bda725b589a13146a7c4f78491c91b5, type: 3}
-  - {fileID: 21300000, guid: 47b9e2472d9e9984fa215fe2c038b240, type: 3}
-  - {fileID: 21300000, guid: b87ec8c703679c643b42fdc29cbd21a2, type: 3}
-  - {fileID: 21300000, guid: c7ad20e4a6e272c4f8a54b1860839279, type: 3}
-  - {fileID: 21300000, guid: 658a9a6e3e232364dae7cc0b0d4a419b, type: 3}
-  - {fileID: 21300000, guid: 0b14ee9e849cd674b9c8f65d3ddc0a54, type: 3}
-  - {fileID: 21300000, guid: efa01cc1840eeb548ad6a38ec5b747c4, type: 3}
-  - {fileID: 21300000, guid: 15a5d9514ce178b48b2a1e748bbbc7ca, type: 3}
-  - {fileID: 21300000, guid: 679e378d38f098b489b1c93b364748ec, type: 3}
-  - {fileID: 21300000, guid: d9e2d2410d17a6e4ab211faf0cfc994b, type: 3}
-  winterSprites:
-  - {fileID: 21300000, guid: a292f5c895a2d694895d2ba5e08de773, type: 3}
-  - {fileID: 21300000, guid: f5562d6d6e9859040b2523029e575d8b, type: 3}
-  - {fileID: 21300000, guid: 5515553c65e8fff46975438aeee2cbb1, type: 3}
-  - {fileID: 21300000, guid: 8654cc8791853d54ebb191665d35a037, type: 3}
-  - {fileID: 21300000, guid: 650b2b7449a8e1c4fa9451e4c17827cc, type: 3}
-  - {fileID: 21300000, guid: fee9d248d0b61c848876c112177b722d, type: 3}
-  - {fileID: 21300000, guid: 528ff9644bdbd3942b3441419b64752a, type: 3}
-  - {fileID: 21300000, guid: d2ccc9438c069b44b969ac6954ebf9e2, type: 3}
-  sprConInfo:
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294  Arcturus\uB97C
-    \uCC3E\uC73C\uBA74 \uBAA9\uB3D9\uC790\uB9AC\uB97C \uC27D\uAC8C \uCC3E\uC744 \uC218
-    \uC788\uB2E4.\\n\\n\uAD6D\uC790 \uBAA8\uC591\uC758 \uBD81\uB450\uCE60\uC131\uC758
-    \uC190\uC7A1\uC774 \uBD80\uBD84\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uD558\uB298\uC758
-    \uC0D8\uBB3C\uC774 \uBD04\uBE44\uAC00 \uB418\uC5B4 \uAD6D\uC790\uC758 \uC190\uC7A1\uC774\uB97C
-    \uB530\uB77C \uB545\uC73C\uB85C \uD758\uB7EC\uB0B4\uB9B4 \uB54C \uADF8 \uBD04\uBE44\uC758
-    \uD61C\uD0DD\uC744 \uCC98\uC74C\uC73C\uB85C \uBC1B\uB294 \uC0AC\uB78C\uC774 \uBC14\uB85C
-    \uBAA9\uB3D9\uC774\uAE30 \uB54C\uBB38\uC774\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
-    Regulus\uB97C \uCC3E\uC73C\uBA74 \uC0AC\uC790\uC790\uB9AC\uB97C \uC27D\uAC8C
-    \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uBD81\uB450\uCE60\uC131\uC758 \uAD6D\uC790
-    \uBA38\uB9AC \uBD80\uBD84\uC5D0\uC11C \uCB49 \uB0B4\uB824\uC624\uBA74 \uC0AC\uC790\uC790\uB9AC\uAC00
-    \uC704\uCE58\uD55C\uB2E4."
-  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0\uC11C Spica\uB97C \uCC3E\uC73C\uBA74
-    \uCC98\uB140\uC790\uB9AC\uB97C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\nSpica\uB294
-    \uBD81\uB450\uCE60\uC131\uC758 \uAD6D\uC790\uB85C\uBD80\uD130 \uBAA9\uB3D9\uC790\uB9AC\uC758
-    Arcturus\uC5D0 \uC774\uB974\uB294 \uACE1\uC120\uC744 \uC5F0\uC7A5\uD558\uBA74
-    \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC0AC\uC790\uC790\uB9AC\uC758
-    \uAF2C\uB9AC \uBD80\uBD84\uC5D0 \uC704\uCE58\uD55C\uB2E4."
-  - "\uBD81\uC11C\uCABD(NW) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC0B4\uCFA1\uC774\uC758
-    \uB208\uCC98\uB7FC \uC2DC\uB825\uC774 \uC88B\uC544\uC57C\uB9CC \uC54C\uC544\uBCFC
-    \uC218 \uC788\uB2E4\uACE0 \uD574\uC11C \uC0B4\uCFA1\uC774\uC790\uB9AC\uB77C\uB294
-    \uC774\uB984\uC774 \uBD99\uC5EC\uC84C\uB2E4."
-  - "\uB0A8(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC0AC\uC790\uC790\uB9AC\uC758
-    \uBD81\uCABD\uC5D0 \uC704\uCE58\uD55C \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC8FC\uC694
-    \uBCC4\uB4E4\uC774 \uBC18\uC6D0\uD615\uC758 \uD638\uB97C \uADF8\uB9B0\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
-    \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294
-    \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uD604\uB300\uC758
-    \uAC00\uC7A5 \uD070 \uBCC4\uC790\uB9AC\uC774\uBA70 \uAC00\uB85C\uB85C \uAE38\uAC8C
-    \uC774\uC5B4\uC838\uC788\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
-    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uBC14\uB2E4\uBC40\uC790\uB9AC\uC640 \uAE4C\uB9C8\uADC0\uC790\uB9AC\uC5D0
-    \uC778\uC811\uD574\uC788\uB2E4.\\n\\n\uC220\uC794\uC790\uB9AC\uB77C\uACE0\uB3C4
-    \uD55C\uB2E4."
-  sumConInfo:
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
-    Vega\uB97C \uCC3E\uC73C\uBA74 \uAC70\uBB38\uACE0\uC790\uB9AC\uB97C \uC27D\uAC8C
-    \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n"
-  - "\uB0A8\uCABD(SE) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
-    Altair\uB97C \uCC3E\uC73C\uBA74 \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB294
-    \uBCC4\uC790\uB9AC\uC774\uB2E4. "
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
-    Deneb\uB97C \uCC3E\uC73C\uBA74 \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB294
-    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC740\uD558\uC218 \uC704\uC5D0 \uB0A0\uAC1C\uB97C
-    \uD3BC\uCE5C \uBC31\uC870\uC758 \uBAA8\uC2B5\uC73C\uB85C, \uD06C\uAE30\uB3C4
-    \uBE44\uAD50\uC801 \uD070 \uD3B8\uC774\uC5B4\uC11C \uBC1D\uC740 \uBCC4\uC774
-    \uB9CE\uB2E4."
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
-    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uD654\uC0B4 \uB05D\uC774 \uBC31\uC870\uC790\uB9AC\uB97C
-    \uD5A5\uD558\uACE0 \uC788\uC73C\uBA70, \uC740\uD558\uC218 \uC704\uC5D0 \uB193\uC5EC
-    \uC788\uB2E4."
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
-    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uB3C5\uC218\uB9AC\uC790\uB9AC\uC758 \uB3D9\uCABD\uC5D0\uC11C
-    \uBCFC \uC218 \uC788\uB2E4.\\n\\n\uBC14\uB2E4 \uC704\uB85C \uB6F0\uC5B4 \uC624\uB978
-    \uB3CC\uACE0\uB798\uC758 \uBAA8\uC591\uC744 \uD558\uACE0\uC788\uB2E4."
-  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uD070
-    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uADF8\uB9AC\uC2A4 \uC2E0\uD654\uC5D0 \uB4F1\uC7A5\uD558\uB294
-    \uD5E4\uB77C\uD074\uB808\uC2A4\uB97C \uB530\uB77C \uC774\uB984\uC774 \uC9C0\uC5B4\uC84C\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uBC1D\uAC8C
-    \uBE5B\uB098\uB294 \uBCC4 Antares\uB97C \uCC3E\uC73C\uBA74 \uC27D\uAC8C \uCC3E\uC744
-    \uC218 \uC788\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C  \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uB3C5\uC218\uB9AC\uC790\uB9AC,
-    \uBC40\uC790\uB9AC, \uD5E4\uB77C\uD074\uB808\uC2A4 \uC0AC\uC774\uC5D0 \uB193\uC5EC
-    \uC788\uB2E4.\\n\\n\uBC40\uC8FC\uC778\uC790\uB9AC\uAC00 \uBC40\uC790\uB9AC\uB97C
-    \uB458\uB85C \uB098\uB208\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uAE34 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC5EC\uB7EC
-    \uBCC4\uC790\uB9AC \uC911 \uC720\uC77C\uD558\uAC8C \uB458\uB85C \uB098\uB258\uC5B4\uC838
-    \uC788\uC73C\uBA70, \uB458 \uC0AC\uC774\uC5D0\uB294 \uBC40\uC8FC\uC778\uC790\uB9AC\uAC00
-    \uBC40\uC744 \uC950\uACE0 \uC788\uB294 \uD615\uC0C1\uC73C\uB85C \uB193\uC5EC
-    \uC788\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC804\uAC08\uC790\uB9AC\uC758
-    \uB3D9\uCABD\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uD754\uD788 \uD65C\uC744 \uB2F9\uAE30\uB294
-    \uCF04\uD0C0\uC6B0\uB85C\uC2A4\uB85C \uBB18\uC0AC\uB41C\uB2E4."
-  autConInfo:
-  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uB85C
-    \uC0AC\uAC01\uD615\uC744 \uCC3E\uC73C\uBA74 \uD398\uAC00\uC218\uC2A4\uC790\uB9AC\uB97C
-    \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4."
-  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uB85C
-    \uD398\uAC00\uC218\uC2A4\uC790\uB9AC \uBD80\uADFC\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uADF8\uB9AC\uC2A4
-    \uC2E0\uD654\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uC778\uBB3C\uC778 \uC548\uB4DC\uB85C\uBA54\uB2E4\uC758
-    \uC774\uB984\uC774 \uBD99\uC5EC\uC9C4 \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uBD81\uB3D9\uCABD(NE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uADF8\uB9AC\uC2A4
-    \uC2E0\uD654\uC758 \uC601\uC6C5 \uD398\uB974\uC138\uC6B0\uC2A4\uC758 \uC774\uB984\uC774
-    \uBD99\uC5EC\uC9C4 \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC548\uB4DC\uB85C\uBA54\uB2E4\uC790\uB9AC\uC758
-    \uBC1C \uB05D\uC5D0\uC11C \uC544\uB798\uB85C \uB0B4\uB824\uC624\uBA74 \uC54C\uD30C\uBCC4
-    Hamal\uC744 \uCC3E\uC744 \uC218 \uC788\uB2E4."
-  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uBB3C\uBCD1\uC790\uB9AC\uC640
-    \uC591\uC790\uB9AC \uC0AC\uC774\uC5D0 \uB193\uC5EC\uC788\uB2E4.\\n\\n\uB450 \uB9C8\uB9AC\uC758
-    \uC11C\uB85C \uC5F0\uACB0\uB41C \uBB3C\uACE0\uAE30\uAC00 \uBC18\uB300\uBC29\uD5A5\uC73C\uB85C
-    \uD5E4\uC5C4\uCE58\uB294 \uBAA8\uC2B5\uC744 \uD558\uACE0\uC788\uB2E4."
-  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\nW\uC790\uC758
-    \uD615\uD0DC\uB97C \uD558\uACE0 \uC788\uB2E4. \uBD81\uBC18\uAD6C \uC911\uC704\uB3C4
-    \uC774\uC0C1\uC5D0\uC11C\uB294 \uB300\uBD80\uBD84\uC758 \uBC24\uD558\uB298\uC5D0
-    \uD56D\uC0C1 \uB5A0 \uC788\uACE0 \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4."
-  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC5FC\uC18C\uC790\uB9AC\uC640
-    \uBB3C\uACE0\uAE30\uC790\uB9AC \uC0AC\uC774\uC5D0 \uB193\uC5EC\uC788\uB2E4."
-  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB0A8\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  winConInfo:
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uB208\uC5D0 \uB744\uB294
-    \uD070 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uACA8\uC6B8\uC758 \uC800\uB141 \uD558\uB298\uC5D0\uC11C
-    \uC8FC\uB85C \uBCF4\uC774\uBA70, \uADF8\uB9AC\uC2A4 \uC2E0\uD654\uC5D0 \uB098\uC624\uB294
-    \uC0AC\uB0E5\uAFBC\uC778 \uC624\uB9AC\uC628\uC758 \uC774\uB984\uC774 \uBD99\uC5EC\uC9C4
-    \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
-    Sirius\uB97C \uCC3E\uC73C\uBA74 \uD070\uAC1C\uC790\uB9AC\uB97C \uC27D\uAC8C \uCC3E\uC744
-    \uC218 \uC788\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0 \uC800\uB141 \uD558\uB298\uC5D0\uC11C
-    \uC27D\uAC8C \uBCFC \uC218 \uC788\uC73C\uBA70, \uC0AC\uB0E5\uAFBC \uC624\uB9AC\uC628\uC744
-    \uB530\uB77C\uB2E4\uB2C8\uB294 \uB450 \uB9C8\uB9AC\uC758 \uAC1C \uC911 \uD558\uB098\uB97C
-    \uB098\uD0C0\uB0B8\uB2E4."
-  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC
-    \uBC14\uB85C \uC544\uB798\uC5D0 \uC788\uB2E4."
-  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC\uC758
-    \uBD81\uC11C\uCABD\uC5D0 \uB193\uC778 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uD669\uC18C\uC790\uB9AC\uB294
-    \uC6B0\uCE21\uC5D0\uC11C \uC624\uB9AC\uC628\uC790\uB9AC\uB97C \uD5A5\uD574 \uBFD4\uC744
-    \uB0B4\uBBF8\uB294 \uD669\uC18C\uC758 \uC55E\uBD80\uBD84\uC758 \uBAA8\uC2B5\uC774
-    \uADF8\uB824\uC9C4\uB2E4."
-  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC\uC758
-    \uBD81\uC11C\uCABD\uC5D0 \uB193\uC778 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0
-    \uC800\uB141 \uD558\uB298\uC5D0\uC11C \uC798 \uBCF4\uC778\uB2E4."
-  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC\uC758
-    \uD314\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0 \uBC24\uD558\uB298\uC5D0
-    \uBCF4\uC774\uB294 \uD76C\uBBF8\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  - "\uB0A8\uC11C\uCABD(S) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294
-    \uBCC4 Capella\uB97C \uCC3E\uC73C\uBA74 \uB9C8\uCC28\uBD80\uC790\uB9AC\uB97C
-    \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0 \uC800\uB141
-    \uD558\uB298\uC5D0\uC11C \uC8FC\uB85C \uBCF4\uC778\uB2E4."
-  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0
-    \uC800\uB141 \uD558\uB298\uC5D0\uC11C \uC8FC\uB85C \uBCF4\uC774\uB294, \uB208\uC5D0
-    \uB744\uC9C0 \uC54A\uB294 \uBE44\uAD50\uC801 \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
-  togglePrefab: {fileID: 7142164202282157812, guid: b6276b7dc4a5234409081398fc7865e3,
-    type: 3}
-  questGroup: {fileID: 1115441953}
-  checkConstellation: {fileID: 0}
-  gap: 70
---- !u!1 &1751131489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1751131490}
-  - component: {fileID: 1751131491}
-  m_Layer: 0
-  m_Name: ConstellationDatabase
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1751131490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751131489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2095538663}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1751131491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1751131489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d762400e6a353c4aab385c8db567c2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1752443876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5174,6 +4844,291 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2028401597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028401598}
+  - component: {fileID: 2028401599}
+  m_Layer: 0
+  m_Name: QuestParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028401598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028401597}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 397.91302, y: 499.2404, z: -3.2869155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1406020224}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028401599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028401597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e819ac563572c4face71e20b7f682c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constellName: {fileID: 1119602823}
+  constellDir: {fileID: 1806258664}
+  clear: {fileID: 362430361}
+  seasonName: {fileID: 1024222190}
+  skyImage: {fileID: 839191181}
+  constellImage: {fileID: 1388352990}
+  skySprites:
+  - {fileID: 21300000, guid: cffe5cbb769721c4687cb6ca6abc4c5c, type: 3}
+  - {fileID: 21300000, guid: 878461e2e8e48ce48a65a4788f1b9c91, type: 3}
+  - {fileID: 21300000, guid: 99a266c51def66e428d1d5c92de0deff, type: 3}
+  - {fileID: 21300000, guid: da23f78566924c246a67a86174bd2943, type: 3}
+  springSprites:
+  - {fileID: 21300000, guid: b35bca03a8ee9e6408ba724ee7f0674e, type: 3}
+  - {fileID: 21300000, guid: c3239a855ffcbd2418f85895d9603b1a, type: 3}
+  - {fileID: 21300000, guid: 1c5a276fc52a69047b4d107dee66f2cd, type: 3}
+  - {fileID: 21300000, guid: 3f7b1f35b6743c641bf2f7f7e42913cd, type: 3}
+  - {fileID: 21300000, guid: 939bd034ad8bc7d438fc8691ac111d83, type: 3}
+  - {fileID: 21300000, guid: 3c59dfbe9d40f2f47accb3bfc29688fb, type: 3}
+  - {fileID: 21300000, guid: 9c44a6f3f3268dd4391ea8818a1963d8, type: 3}
+  - {fileID: 21300000, guid: bee2791af7c49354482975e997ba4226, type: 3}
+  - {fileID: 21300000, guid: e835f602b1864d341a84b76f8bc650a0, type: 3}
+  - {fileID: 21300000, guid: c9b74e4ccbee9ad4d87a079145c7c46c, type: 3}
+  summerSprites:
+  - {fileID: 21300000, guid: c90e86d35e1e5f4448ddad5cda917780, type: 3}
+  - {fileID: 21300000, guid: b3424ce7ddf7dae41a6b6c61e7f5b890, type: 3}
+  - {fileID: 21300000, guid: 560a515ccad199747a098969d2e52fc3, type: 3}
+  - {fileID: 21300000, guid: 22ca9011057f67d4aa1f29f9a962c05a, type: 3}
+  - {fileID: 21300000, guid: c8b00ccb94582424bba354af6e27cea7, type: 3}
+  - {fileID: 21300000, guid: 3bb4797a3d5d05c43b96a91077465c00, type: 3}
+  - {fileID: 21300000, guid: e97078ee039a0a34b926a2691d7b0a32, type: 3}
+  - {fileID: 21300000, guid: e56b6d82025798a46bf56ff4ab6f81ff, type: 3}
+  - {fileID: 21300000, guid: 236b0c026a59a1b41acb5e4d98779f80, type: 3}
+  - {fileID: 21300000, guid: c3394500c9feb39489910ee7a00ac122, type: 3}
+  autumnSprites:
+  - {fileID: 21300000, guid: 3bda725b589a13146a7c4f78491c91b5, type: 3}
+  - {fileID: 21300000, guid: 47b9e2472d9e9984fa215fe2c038b240, type: 3}
+  - {fileID: 21300000, guid: b87ec8c703679c643b42fdc29cbd21a2, type: 3}
+  - {fileID: 21300000, guid: c7ad20e4a6e272c4f8a54b1860839279, type: 3}
+  - {fileID: 21300000, guid: 658a9a6e3e232364dae7cc0b0d4a419b, type: 3}
+  - {fileID: 21300000, guid: 0b14ee9e849cd674b9c8f65d3ddc0a54, type: 3}
+  - {fileID: 21300000, guid: efa01cc1840eeb548ad6a38ec5b747c4, type: 3}
+  - {fileID: 21300000, guid: 15a5d9514ce178b48b2a1e748bbbc7ca, type: 3}
+  - {fileID: 21300000, guid: 679e378d38f098b489b1c93b364748ec, type: 3}
+  - {fileID: 21300000, guid: d9e2d2410d17a6e4ab211faf0cfc994b, type: 3}
+  winterSprites:
+  - {fileID: 21300000, guid: a292f5c895a2d694895d2ba5e08de773, type: 3}
+  - {fileID: 21300000, guid: f5562d6d6e9859040b2523029e575d8b, type: 3}
+  - {fileID: 21300000, guid: 5515553c65e8fff46975438aeee2cbb1, type: 3}
+  - {fileID: 21300000, guid: 8654cc8791853d54ebb191665d35a037, type: 3}
+  - {fileID: 21300000, guid: 650b2b7449a8e1c4fa9451e4c17827cc, type: 3}
+  - {fileID: 21300000, guid: fee9d248d0b61c848876c112177b722d, type: 3}
+  - {fileID: 21300000, guid: 528ff9644bdbd3942b3441419b64752a, type: 3}
+  - {fileID: 21300000, guid: d2ccc9438c069b44b969ac6954ebf9e2, type: 3}
+  sprConInfo:
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294  Arcturus\uB97C
+    \uCC3E\uC73C\uBA74 \uBAA9\uB3D9\uC790\uB9AC\uB97C \uC27D\uAC8C \uCC3E\uC744 \uC218
+    \uC788\uB2E4.\\n\\n\uAD6D\uC790 \uBAA8\uC591\uC758 \uBD81\uB450\uCE60\uC131\uC758
+    \uC190\uC7A1\uC774 \uBD80\uBD84\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uD558\uB298\uC758
+    \uC0D8\uBB3C\uC774 \uBD04\uBE44\uAC00 \uB418\uC5B4 \uAD6D\uC790\uC758 \uC190\uC7A1\uC774\uB97C
+    \uB530\uB77C \uB545\uC73C\uB85C \uD758\uB7EC\uB0B4\uB9B4 \uB54C \uADF8 \uBD04\uBE44\uC758
+    \uD61C\uD0DD\uC744 \uCC98\uC74C\uC73C\uB85C \uBC1B\uB294 \uC0AC\uB78C\uC774 \uBC14\uB85C
+    \uBAA9\uB3D9\uC774\uAE30 \uB54C\uBB38\uC774\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
+    Regulus\uB97C \uCC3E\uC73C\uBA74 \uC0AC\uC790\uC790\uB9AC\uB97C \uC27D\uAC8C
+    \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uBD81\uB450\uCE60\uC131\uC758 \uAD6D\uC790
+    \uBA38\uB9AC \uBD80\uBD84\uC5D0\uC11C \uCB49 \uB0B4\uB824\uC624\uBA74 \uC0AC\uC790\uC790\uB9AC\uAC00
+    \uC704\uCE58\uD55C\uB2E4."
+  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0\uC11C Spica\uB97C \uCC3E\uC73C\uBA74
+    \uCC98\uB140\uC790\uB9AC\uB97C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\nSpica\uB294
+    \uBD81\uB450\uCE60\uC131\uC758 \uAD6D\uC790\uB85C\uBD80\uD130 \uBAA9\uB3D9\uC790\uB9AC\uC758
+    Arcturus\uC5D0 \uC774\uB974\uB294 \uACE1\uC120\uC744 \uC5F0\uC7A5\uD558\uBA74
+    \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC0AC\uC790\uC790\uB9AC\uC758
+    \uAF2C\uB9AC \uBD80\uBD84\uC5D0 \uC704\uCE58\uD55C\uB2E4."
+  - "\uBD81\uC11C\uCABD(NW) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC0B4\uCFA1\uC774\uC758
+    \uB208\uCC98\uB7FC \uC2DC\uB825\uC774 \uC88B\uC544\uC57C\uB9CC \uC54C\uC544\uBCFC
+    \uC218 \uC788\uB2E4\uACE0 \uD574\uC11C \uC0B4\uCFA1\uC774\uC790\uB9AC\uB77C\uB294
+    \uC774\uB984\uC774 \uBD99\uC5EC\uC84C\uB2E4."
+  - "\uB0A8(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC0AC\uC790\uC790\uB9AC\uC758
+    \uBD81\uCABD\uC5D0 \uC704\uCE58\uD55C \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uC8FC\uC694
+    \uBCC4\uB4E4\uC774 \uBC18\uC6D0\uD615\uC758 \uD638\uB97C \uADF8\uB9B0\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
+    \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294
+    \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uD604\uB300\uC758
+    \uAC00\uC7A5 \uD070 \uBCC4\uC790\uB9AC\uC774\uBA70 \uAC00\uB85C\uB85C \uAE38\uAC8C
+    \uC774\uC5B4\uC838\uC788\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
+    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uBC14\uB2E4\uBC40\uC790\uB9AC\uC640 \uAE4C\uB9C8\uADC0\uC790\uB9AC\uC5D0
+    \uC778\uC811\uD574\uC788\uB2E4.\\n\\n\uC220\uC794\uC790\uB9AC\uB77C\uACE0\uB3C4
+    \uD55C\uB2E4."
+  sumConInfo:
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
+    Vega\uB97C \uCC3E\uC73C\uBA74 \uAC70\uBB38\uACE0\uC790\uB9AC\uB97C \uC27D\uAC8C
+    \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n"
+  - "\uB0A8\uCABD(SE) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
+    Altair\uB97C \uCC3E\uC73C\uBA74 \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB294
+    \uBCC4\uC790\uB9AC\uC774\uB2E4. "
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
+    Deneb\uB97C \uCC3E\uC73C\uBA74 \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB294
+    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC740\uD558\uC218 \uC704\uC5D0 \uB0A0\uAC1C\uB97C
+    \uD3BC\uCE5C \uBC31\uC870\uC758 \uBAA8\uC2B5\uC73C\uB85C, \uD06C\uAE30\uB3C4
+    \uBE44\uAD50\uC801 \uD070 \uD3B8\uC774\uC5B4\uC11C \uBC1D\uC740 \uBCC4\uC774
+    \uB9CE\uB2E4."
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
+    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uD654\uC0B4 \uB05D\uC774 \uBC31\uC870\uC790\uB9AC\uB97C
+    \uD5A5\uD558\uACE0 \uC788\uC73C\uBA70, \uC740\uD558\uC218 \uC704\uC5D0 \uB193\uC5EC
+    \uC788\uB2E4."
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uC791\uC740
+    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uB3C5\uC218\uB9AC\uC790\uB9AC\uC758 \uB3D9\uCABD\uC5D0\uC11C
+    \uBCFC \uC218 \uC788\uB2E4.\\n\\n\uBC14\uB2E4 \uC704\uB85C \uB6F0\uC5B4 \uC624\uB978
+    \uB3CC\uACE0\uB798\uC758 \uBAA8\uC591\uC744 \uD558\uACE0\uC788\uB2E4."
+  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uD070
+    \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uADF8\uB9AC\uC2A4 \uC2E0\uD654\uC5D0 \uB4F1\uC7A5\uD558\uB294
+    \uD5E4\uB77C\uD074\uB808\uC2A4\uB97C \uB530\uB77C \uC774\uB984\uC774 \uC9C0\uC5B4\uC84C\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uCC3E\uC744 \uC218 \uC788\uB294 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uBC1D\uAC8C
+    \uBE5B\uB098\uB294 \uBCC4 Antares\uB97C \uCC3E\uC73C\uBA74 \uC27D\uAC8C \uCC3E\uC744
+    \uC218 \uC788\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C  \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uB3C5\uC218\uB9AC\uC790\uB9AC,
+    \uBC40\uC790\uB9AC, \uD5E4\uB77C\uD074\uB808\uC2A4 \uC0AC\uC774\uC5D0 \uB193\uC5EC
+    \uC788\uB2E4.\\n\\n\uBC40\uC8FC\uC778\uC790\uB9AC\uAC00 \uBC40\uC790\uB9AC\uB97C
+    \uB458\uB85C \uB098\uB208\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uAE34 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC5EC\uB7EC
+    \uBCC4\uC790\uB9AC \uC911 \uC720\uC77C\uD558\uAC8C \uB458\uB85C \uB098\uB258\uC5B4\uC838
+    \uC788\uC73C\uBA70, \uB458 \uC0AC\uC774\uC5D0\uB294 \uBC40\uC8FC\uC778\uC790\uB9AC\uAC00
+    \uBC40\uC744 \uC950\uACE0 \uC788\uB294 \uD615\uC0C1\uC73C\uB85C \uB193\uC5EC
+    \uC788\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC804\uAC08\uC790\uB9AC\uC758
+    \uB3D9\uCABD\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uD754\uD788 \uD65C\uC744 \uB2F9\uAE30\uB294
+    \uCF04\uD0C0\uC6B0\uB85C\uC2A4\uB85C \uBB18\uC0AC\uB41C\uB2E4."
+  autConInfo:
+  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uB85C
+    \uC0AC\uAC01\uD615\uC744 \uCC3E\uC73C\uBA74 \uD398\uAC00\uC218\uC2A4\uC790\uB9AC\uB97C
+    \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4."
+  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uB85C
+    \uD398\uAC00\uC218\uC2A4\uC790\uB9AC \uBD80\uADFC\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uADF8\uB9AC\uC2A4
+    \uC2E0\uD654\uC5D0 \uB4F1\uC7A5\uD558\uB294 \uC778\uBB3C\uC778 \uC548\uB4DC\uB85C\uBA54\uB2E4\uC758
+    \uC774\uB984\uC774 \uBD99\uC5EC\uC9C4 \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uBD81\uB3D9\uCABD(NE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uADF8\uB9AC\uC2A4
+    \uC2E0\uD654\uC758 \uC601\uC6C5 \uD398\uB974\uC138\uC6B0\uC2A4\uC758 \uC774\uB984\uC774
+    \uBD99\uC5EC\uC9C4 \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC548\uB4DC\uB85C\uBA54\uB2E4\uC790\uB9AC\uC758
+    \uBC1C \uB05D\uC5D0\uC11C \uC544\uB798\uB85C \uB0B4\uB824\uC624\uBA74 \uC54C\uD30C\uBCC4
+    Hamal\uC744 \uCC3E\uC744 \uC218 \uC788\uB2E4."
+  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uBB3C\uBCD1\uC790\uB9AC\uC640
+    \uC591\uC790\uB9AC \uC0AC\uC774\uC5D0 \uB193\uC5EC\uC788\uB2E4.\\n\\n\uB450 \uB9C8\uB9AC\uC758
+    \uC11C\uB85C \uC5F0\uACB0\uB41C \uBB3C\uACE0\uAE30\uAC00 \uBC18\uB300\uBC29\uD5A5\uC73C\uB85C
+    \uD5E4\uC5C4\uCE58\uB294 \uBAA8\uC2B5\uC744 \uD558\uACE0\uC788\uB2E4."
+  - "\uBD81\uCABD(N) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\nW\uC790\uC758
+    \uD615\uD0DC\uB97C \uD558\uACE0 \uC788\uB2E4. \uBD81\uBC18\uAD6C \uC911\uC704\uB3C4
+    \uC774\uC0C1\uC5D0\uC11C\uB294 \uB300\uBD80\uBD84\uC758 \uBC24\uD558\uB298\uC5D0
+    \uD56D\uC0C1 \uB5A0 \uC788\uACE0 \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4."
+  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC5FC\uC18C\uC790\uB9AC\uC640
+    \uBB3C\uACE0\uAE30\uC790\uB9AC \uC0AC\uC774\uC5D0 \uB193\uC5EC\uC788\uB2E4."
+  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB0A8\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  winConInfo:
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uB208\uC5D0 \uB744\uB294
+    \uD070 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uACA8\uC6B8\uC758 \uC800\uB141 \uD558\uB298\uC5D0\uC11C
+    \uC8FC\uB85C \uBCF4\uC774\uBA70, \uADF8\uB9AC\uC2A4 \uC2E0\uD654\uC5D0 \uB098\uC624\uB294
+    \uC0AC\uB0E5\uAFBC\uC778 \uC624\uB9AC\uC628\uC758 \uC774\uB984\uC774 \uBD99\uC5EC\uC9C4
+    \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294 \uBCC4
+    Sirius\uB97C \uCC3E\uC73C\uBA74 \uD070\uAC1C\uC790\uB9AC\uB97C \uC27D\uAC8C \uCC3E\uC744
+    \uC218 \uC788\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0 \uC800\uB141 \uD558\uB298\uC5D0\uC11C
+    \uC27D\uAC8C \uBCFC \uC218 \uC788\uC73C\uBA70, \uC0AC\uB0E5\uAFBC \uC624\uB9AC\uC628\uC744
+    \uB530\uB77C\uB2E4\uB2C8\uB294 \uB450 \uB9C8\uB9AC\uC758 \uAC1C \uC911 \uD558\uB098\uB97C
+    \uB098\uD0C0\uB0B8\uB2E4."
+  - "\uB0A8\uCABD(S) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC
+    \uBC14\uB85C \uC544\uB798\uC5D0 \uC788\uB2E4."
+  - "\uB0A8\uC11C\uCABD(SW) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC\uC758
+    \uBD81\uC11C\uCABD\uC5D0 \uB193\uC778 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uD669\uC18C\uC790\uB9AC\uB294
+    \uC6B0\uCE21\uC5D0\uC11C \uC624\uB9AC\uC628\uC790\uB9AC\uB97C \uD5A5\uD574 \uBFD4\uC744
+    \uB0B4\uBBF8\uB294 \uD669\uC18C\uC758 \uC55E\uBD80\uBD84\uC758 \uBAA8\uC2B5\uC774
+    \uADF8\uB824\uC9C4\uB2E4."
+  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC\uC758
+    \uBD81\uC11C\uCABD\uC5D0 \uB193\uC778 \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0
+    \uC800\uB141 \uD558\uB298\uC5D0\uC11C \uC798 \uBCF4\uC778\uB2E4."
+  - "\uB0A8\uB3D9\uCABD(SE) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uC624\uB9AC\uC628\uC790\uB9AC\uC758
+    \uD314\uC5D0 \uC704\uCE58\uD55C\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0 \uBC24\uD558\uB298\uC5D0
+    \uBCF4\uC774\uB294 \uD76C\uBBF8\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  - "\uB0A8\uC11C\uCABD(S) \uD558\uB298\uC5D0\uC11C \uBC1D\uAC8C \uBE5B\uB098\uB294
+    \uBCC4 Capella\uB97C \uCC3E\uC73C\uBA74 \uB9C8\uCC28\uBD80\uC790\uB9AC\uB97C
+    \uC27D\uAC8C \uCC3E\uC744 \uC218 \uC788\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0 \uC800\uB141
+    \uD558\uB298\uC5D0\uC11C \uC8FC\uB85C \uBCF4\uC778\uB2E4."
+  - "\uB3D9\uCABD(E) \uD558\uB298\uC5D0 \uC704\uCE58\uD55C \uBCC4\uC790\uB9AC\uC774\uB2E4.\\n\\n\uACA8\uC6B8\uCCA0
+    \uC800\uB141 \uD558\uB298\uC5D0\uC11C \uC8FC\uB85C \uBCF4\uC774\uB294, \uB208\uC5D0
+    \uB744\uC9C0 \uC54A\uB294 \uBE44\uAD50\uC801 \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
+  togglePrefab: {fileID: 7142164202282157812, guid: b6276b7dc4a5234409081398fc7865e3,
+    type: 3}
+  questGroup: {fileID: 1115441953}
+  checkConstellation: {fileID: 0}
+  gap: 70
+--- !u!1 &2035481175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2035481176}
+  - component: {fileID: 2035481177}
+  m_Layer: 0
+  m_Name: ClearManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2035481176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035481175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2095538663}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2035481177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035481175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32e4143cd69a544590a8d88f7e629ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clearObject: {fileID: 362430361}
 --- !u!1 &2095538662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,13 +5159,56 @@ Transform:
   m_Children:
   - {fileID: 1935054466}
   - {fileID: 1752443878}
-  - {fileID: 1430067092}
-  - {fileID: 1751131490}
   - {fileID: 1432792636}
-  - {fileID: 1734099111}
+  - {fileID: 2035481176}
+  - {fileID: 2117231036}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2117231035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117231036}
+  - component: {fileID: 2117231037}
+  m_Layer: 0
+  m_Name: GameManage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2117231036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117231035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2095538663}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117231037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117231035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff60cc7d0ef9f847bf5efa32cd95038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1484129948271871914
 PrefabInstance:
   m_ObjectHideFlags: 0

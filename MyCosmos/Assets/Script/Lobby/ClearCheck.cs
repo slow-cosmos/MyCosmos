@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ClearCheck : MonoBehaviour
 {
-    ChapterManage chapterManage;
     public GameObject[] clearText;
 
     void Start()
     {
-        chapterManage = GameObject.Find("ChapterManage").GetComponent<ChapterManage>();
-        for (int i = 0; i < chapterManage.chapterClear.Length; i++)
+        for (int i = 0; i < ChapterManage.Instance.chapterClear.Length; i++)
         {
-            if (chapterManage.chapterClear[i] == true)
+            if (ChapterManage.Instance.chapterClear[i] == true)
                 clearText[i].gameObject.SetActive(true);
            }
 
