@@ -15,7 +15,7 @@ public class LobbyManage : MonoBehaviour
         chapterCanvas.gameObject.SetActive(true);
         lobbyCanvas.gameObject.SetActive(false);
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void ExitButton()
@@ -24,7 +24,7 @@ public class LobbyManage : MonoBehaviour
 
         Application.Quit();
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void PreviousButton()
@@ -32,7 +32,7 @@ public class LobbyManage : MonoBehaviour
         chapterCanvas.gameObject.SetActive(false);
         lobbyCanvas.gameObject.SetActive(true);
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
 }

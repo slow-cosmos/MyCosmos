@@ -125,7 +125,7 @@ public class QuestUI : MonoBehaviour
                 break;
         }
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     // 전체 별자리 탭

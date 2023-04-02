@@ -5,11 +5,15 @@ using System.IO;
 using System;
 
 [System.Serializable]
+public class SoundData
+{
+    public bool onBGM;
+    public bool onSFX;
+}
+
+[System.Serializable]
 public class GameData
 {
-    public int BGMSound = 0;
-    public int EffectSound = 0;
-
     public bool[] chapterClear;
 }
 
@@ -41,6 +45,41 @@ public class DataManage : MonoBehaviour
             return _instance;
         }
     }
+
+    // 사운드 데이터 ---------------------------------------------
+
+    public string SoundDataFileName = "SoundData.json";
+
+    public SoundData soundData = new SoundData();
+
+    public void LoadSoundData()
+    {
+        string filePath = Application.persistentDataPath + SoundDataFileName;
+        if(File.Exists(filePath))
+        {
+            Debug.Log("불러오기 성공 : Sound Data");
+            string FromJsonData = File.ReadAllText(filePath);
+            soundData=JsonUtility.FromJson<SoundData>(FromJsonData);
+
+            // 사운드
+            SoundManage.Instance.onSFX = soundData.onSFX;
+            SoundManage.Instance.onBGM = soundData.onBGM;
+        }
+    }
+
+    public void SaveSoundData()
+    {
+        // 사운드
+        soundData.onSFX = SoundManage.Instance.onSFX;
+        soundData.onBGM = SoundManage.Instance.onBGM;
+
+        string ToJsonData = JsonUtility.ToJson(soundData);
+        string filePath = Application.persistentDataPath + SoundDataFileName;
+        File.WriteAllText(filePath, ToJsonData);
+        Debug.Log("저장 완료 : Sound Data");
+    }
+
+    // 전체 챕터 클리어 데이터 ---------------------------------------------
 
     public string GameDataFileName = "GameData.json";
 
@@ -78,7 +117,7 @@ public class DataManage : MonoBehaviour
         Debug.Log("저장 완료 : Game Data");
     }
 
-    // ---------------------------------------------
+    // 챕터 데이터 ---------------------------------------------
 
     public string ChapterDataFileName = "ChapterData.json";
 

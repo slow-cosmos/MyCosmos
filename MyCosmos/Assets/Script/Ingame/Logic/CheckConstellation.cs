@@ -81,7 +81,7 @@ public class CheckConstellation : ConstellationDatabase
                 Debug.Log(constell_Database[i].name);
 
                 //별자리 찾는 효과음
-                SoundManage.instance.PlayConstellSound();
+                SoundManage.Instance.PlayConstellSound();
 
                 //퀘스트 클리어 저장
                 DataManage.Instance.SaveChapterData();

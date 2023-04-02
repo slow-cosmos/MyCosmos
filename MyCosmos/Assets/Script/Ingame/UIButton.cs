@@ -33,7 +33,7 @@ public class UIButton : MonoBehaviour
 
         GameObject.Find("Main Camera").GetComponent<CameraController>().enabled=true;
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void QuestBtn()
@@ -45,7 +45,7 @@ public class UIButton : MonoBehaviour
 
         GameObject.Find("Main Camera").GetComponent<CameraController>().enabled=false;
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void LobbyBtn()
@@ -54,7 +54,7 @@ public class UIButton : MonoBehaviour
         
         SceneManager.LoadScene("Lobby");
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void PreviousBtn()
@@ -63,7 +63,7 @@ public class UIButton : MonoBehaviour
         previousButton.gameObject.SetActive(false);
         info.gameObject.SetActive(false);
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void Tab1()
@@ -71,7 +71,7 @@ public class UIButton : MonoBehaviour
         GameObject.Find("QuestCanvas").transform.Find("Tab1Group").gameObject.SetActive(true);
         GameObject.Find("QuestCanvas").transform.Find("Tab2Group").gameObject.SetActive(false);
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
     public void Tab2()
@@ -79,7 +79,7 @@ public class UIButton : MonoBehaviour
         GameObject.Find("QuestCanvas").transform.Find("Tab2Group").gameObject.SetActive(true);
         GameObject.Find("QuestCanvas").transform.Find("Tab1Group").gameObject.SetActive(false);
 
-        SoundManage.instance.PlayButtonSound();
+        SoundManage.Instance.PlayButtonSound();
     }
 
 }

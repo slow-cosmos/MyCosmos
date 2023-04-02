@@ -49,7 +49,7 @@ public class ConnectStar : MonoBehaviour
                         
                         selectCircle.SpawnCircle(star1);
 
-                        SoundManage.instance.PlayStarSound();
+                        SoundManage.Instance.PlayStarSound();
                     }
                     else if (star1 == hit.collider.gameObject) //별1 체크 취소
                     {
@@ -61,7 +61,7 @@ public class ConnectStar : MonoBehaviour
                     {
                         star2 = hit.collider.gameObject;
 
-                        SoundManage.instance.PlayStarSound();
+                        SoundManage.Instance.PlayStarSound();
                     }
                     else if (star2 == hit.collider.gameObject) //별2 체크 취소
                     {

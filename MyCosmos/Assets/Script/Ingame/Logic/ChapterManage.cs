@@ -20,7 +20,7 @@ public class ChapterManage : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-
+        
         DataManage.Instance.LoadGameData();
     }
 }

@@ -5,23 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class SoundManage : MonoBehaviour
 {
-    public static SoundManage instance;
+    public static SoundManage Instance;
 
     public AudioSource audioSource, bgmAudioSource;
     public AudioClip buttonSound, starSound, constellSound;
 
-    public bool onSFX=true, onBGM=true;
+    public bool onSFX, onBGM;
 
     private void Awake()
     {
-        if (instance != null) //중복생성 피하기
+        if (Instance != null) //중복생성 피하기
         {
             Destroy(gameObject);
             return;
         }
 
-        instance = this;
+        Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        DataManage.Instance.LoadSoundData();
     }
 
     public void PlayButtonSound()
@@ -40,17 +42,5 @@ public class SoundManage : MonoBehaviour
     {
         audioSource.volume = onSFX ? 0.3f : 0;
         audioSource.PlayOneShot(constellSound);
-    }
-
-    public void BGM()
-    {
-        if (onBGM)
-        {
-            bgmAudioSource.volume = 0.3f;
-        }
-        else
-        {
-            bgmAudioSource.volume = 0;
-        }
     }
 }
