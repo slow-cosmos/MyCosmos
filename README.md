@@ -35,8 +35,8 @@
 
 ## 다운로드 링크
 [PC](https://drive.google.com/file/d/19bDRRGLv9tIfDUsZIgZRhdpyhoIaJi_d/view?usp=sharing)
-(압축 풀기 후 exe 실행)
-[모바일](https://play.google.com/store/apps/details?id=com.JUHEE.MyCosmos)
+(압축 풀기 후 exe 실행)\n
+[모바일](https://play.google.com/store/apps/details?id=com.JUHEE.MyCosmos)\n
 -> 최신 버전으로 플레이 가능
 
 ## 게임 소개 영상
