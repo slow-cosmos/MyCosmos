@@ -131,9 +131,9 @@ public class CameraController : MonoBehaviour
             {
                 camera.fieldOfView = 20;
             }
-            else if (camera.fieldOfView > 80) //줌아웃
+            else if (camera.fieldOfView > 90) //줌아웃
             {
-                camera.fieldOfView = 80;
+                camera.fieldOfView = 90;
             }
         }
 

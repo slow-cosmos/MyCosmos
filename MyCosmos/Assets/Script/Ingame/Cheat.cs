@@ -56,6 +56,6 @@ public class Cheat : MonoBehaviour
                 Destroy(lineGroup.transform.GetChild(i).gameObject);
             }
         }
-    }
 #endif
+    }
 }
