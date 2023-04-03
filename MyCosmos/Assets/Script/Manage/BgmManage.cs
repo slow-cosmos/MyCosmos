@@ -11,7 +11,6 @@ public class BgmManage : MonoBehaviour
 
     public void BGM()
     {
-        Debug.Log("BGM:"+SoundManage.Instance.onBGM);
         if (SoundManage.Instance.onBGM)
         {
             GetComponent<AudioSource>().volume = 0.3f;

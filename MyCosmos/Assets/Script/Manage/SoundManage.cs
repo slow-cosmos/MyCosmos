@@ -7,7 +7,7 @@ public class SoundManage : MonoBehaviour
 {
     public static SoundManage Instance;
 
-    public AudioSource audioSource, bgmAudioSource;
+    public AudioSource audioSource;
     public AudioClip buttonSound, starSound, constellSound;
 
     public bool onSFX, onBGM;

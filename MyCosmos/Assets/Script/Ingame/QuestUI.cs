@@ -16,7 +16,7 @@ public class QuestUI : MonoBehaviour
     Text seasonName;
 
     [SerializeField]
-    Image skyImage, constellImage;
+    Image skyImage, zoomSkyImage, constellImage;
 
     [SerializeField]
     Sprite[] skySprites; //계절 밤하늘 스프라이트
@@ -136,18 +136,22 @@ public class QuestUI : MonoBehaviour
             case "spring":
                 seasonName.text = "봄철 별자리";
                 skyImage.sprite = skySprites[0];
+                zoomSkyImage.sprite = skySprites[0];
                 break;
             case "summer":
                 seasonName.text = "여름철 별자리";
                 skyImage.sprite = skySprites[1];
+                zoomSkyImage.sprite = skySprites[0];
                 break;
             case "autumn":
                 seasonName.text = "가을철 별자리";
                 skyImage.sprite = skySprites[2];
+                zoomSkyImage.sprite = skySprites[0];
                 break;
             case "winter":
                 seasonName.text = "겨울철 별자리";
                 skyImage.sprite = skySprites[3];
+                zoomSkyImage.sprite = skySprites[0];
                 break;
         }
     }
