@@ -27,15 +27,17 @@
   + WASD, 방향키, 마우스 드래그 → 카메라 회전  
   + 마우스 휠 → 카메라 줌 인, 줌 아웃  
   + 마우스 왼쪽 클릭 → 별 선택/취소, 선 제거  
-+ **모바일** (최적화 중)
++ **모바일**
   + 터치 드래그 → 카메라 회전
   + 두 손 터치 → 카메라 줌 인, 줌 아웃
   + 터치 → 별 선택/취소, 선 제거
 
 
 ## 다운로드 링크
-[My Cosmos](https://drive.google.com/file/d/19bDRRGLv9tIfDUsZIgZRhdpyhoIaJi_d/view?usp=sharing)
-(압축 풀기 후 exe 실행)
+[PC](https://drive.google.com/file/d/19bDRRGLv9tIfDUsZIgZRhdpyhoIaJi_d/view?usp=sharing)
+(압축 풀기 후 exe 실행)  
+[모바일](https://play.google.com/store/apps/details?id=com.JUHEE.MyCosmos)
+(최신 버전으로 플레이 가능)
 
 ## 게임 소개 영상
 [Youtube](https://youtube.com/shorts/-PJ5V7esZ9Q?feature=share)
