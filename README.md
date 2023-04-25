@@ -1,8 +1,12 @@
 # ✨ My Cosmos
 ## 당신의 계절에서, 별자리를 찾아보세요.
-고등학교 때 기획했던 게임인데, 2022 졸업 프로젝트로 개발하게 되었습니다.  
+밤하늘 보는 것을 좋아하던 제가 고등학교 때 기획했던 게임인데, 2022 졸업 프로젝트로 개발하게 되었습니다.  
 
-현실에서도, 게임에서도, 경쟁에 지친 당신을 위한 힐링 퍼즐 게임 My Cosmos입니다.
+이 게임은 사계절의 챕터로 이루어져있으며, 각 계절을 대표하는 별자리들을 찾는 게임입니다.
+
+밤하늘에 떠있는 별을 터치해 선으로 잇고, 별자리를 만들 수 있습니다.
+
+이 게임을 통해 보다 쉽게 별자리를 공부해보세요.
 
 <div>
 <img width="30%" src="https://user-images.githubusercontent.com/67315989/169975993-df4ad170-454c-445b-b339-f1e53a5ff478.JPG">
@@ -23,21 +27,13 @@
 + 두 번째 탭을 누르면 전체 별자리의 위치 확인  
 + 두 개의 별을 클릭해 선으로 이어 별자리 찾기
 ### 조작
-+ **PC**
-  + WASD, 방향키, 마우스 드래그 → 카메라 회전  
-  + 마우스 휠 → 카메라 줌 인, 줌 아웃  
-  + 마우스 왼쪽 클릭 → 별 선택/취소, 선 제거  
-+ **모바일**
-  + 터치 드래그 → 카메라 회전
-  + 두 손 터치 → 카메라 줌 인, 줌 아웃
-  + 터치 → 별 선택/취소, 선 제거
++ 터치 드래그 → 카메라 회전
++ 두 손 터치 → 카메라 줌 인, 줌 아웃
++ 터치 → 별 선택/취소, 선 제거
 
 
 ## 다운로드 링크
-[PC](https://drive.google.com/file/d/19bDRRGLv9tIfDUsZIgZRhdpyhoIaJi_d/view?usp=sharing)
-(압축 풀기 후 exe 실행)  
-[모바일](https://play.google.com/store/apps/details?id=com.JUHEE.MyCosmos)
-(최신 버전으로 플레이 가능)
+[플레이스토어](https://play.google.com/store/apps/details?id=com.JUHEE.MyCosmos)
 
 ## 게임 소개 영상
 [Youtube](https://youtube.com/shorts/-PJ5V7esZ9Q?feature=share)
