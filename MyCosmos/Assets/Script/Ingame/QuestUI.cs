@@ -39,7 +39,7 @@ public class QuestUI : MonoBehaviour
 
     void Start()
     {
-        season = GameObject.Find("ChapterManage").GetComponent<ChapterManage>().chapter;
+        season = ChapterManage.Instance.chapter;
         checkConstellation = GameObject.Find("CheckConstellation").GetComponent<CheckConstellation>();
 
         for(int i=0;i<sprConInfo.Length;i++)

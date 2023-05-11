@@ -5,6 +5,7 @@ using UnityEngine;
 public class ChapterManage : MonoBehaviour
 {
     private static ChapterManage instance;
+    
     public float lst;
     public string chapter;
 
