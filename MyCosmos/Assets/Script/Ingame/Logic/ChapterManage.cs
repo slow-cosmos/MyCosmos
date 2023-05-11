@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChapterManage : MonoBehaviour
 {
-    public static ChapterManage Instance;
+    private static ChapterManage instance;
     public float lst;
     public string chapter;
 
@@ -12,15 +12,27 @@ public class ChapterManage : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null) //중복생성 피하기
+        if(instance != null) //중복생성 피하기
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
+        instance = this;
         DontDestroyOnLoad(gameObject);
         
         DataManage.Instance.LoadGameData();
+    }
+
+    public static ChapterManage Instance
+    {
+        get
+        {
+            if(instance==null)
+            {
+                return null;
+            }
+            return instance;
+        }
     }
 }

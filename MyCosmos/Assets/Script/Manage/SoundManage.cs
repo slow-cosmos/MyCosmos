@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SoundManage : MonoBehaviour
 {
-    public static SoundManage Instance;
+    private static SoundManage instance;
 
     public AudioSource audioSource;
     public AudioClip buttonSound, starSound, constellSound;
@@ -14,16 +14,28 @@ public class SoundManage : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null) //중복생성 피하기
+        if (instance != null) //중복생성 피하기
         {
             Destroy(gameObject);
             return;
         }
 
-        Instance = this;
+        instance = this;
         DontDestroyOnLoad(gameObject);
 
         DataManage.Instance.LoadSoundData();
+    }
+
+    public static SoundManage Instance
+    {
+        get
+        {
+            if(instance==null)
+            {
+                return null;
+            }
+            return instance;
+        }
     }
 
     public void PlayButtonSound()
