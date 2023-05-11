@@ -66,9 +66,9 @@ public class QuestUI : MonoBehaviour
     void Update()
     {
         // 퀘스트 클리어 토글에 반영
-        for (int i = 0; i < checkConstellation.constell_Database.Length; i++)
+        for (int i = 0; i < checkConstellation.constellDatabase.Length; i++)
         {
-            questList[i].isOn = checkConstellation.constell_Database[i].check;
+            questList[i].isOn = checkConstellation.constellDatabase[i].check;
         }
     }
 
@@ -76,21 +76,21 @@ public class QuestUI : MonoBehaviour
     void QuestInit()
     {
         questList.Clear();
-        for (int i = 0; i < checkConstellation.constell_Database.Length; i++)
+        for (int i = 0; i < checkConstellation.constellDatabase.Length; i++)
         {
             Toggle quest = Instantiate(togglePrefab);
             quest.transform.SetParent(questGroup.transform,false);
-            quest.transform.Find("Label").GetComponent<Text>().text = checkConstellation.constell_Database[i].krName;
+            quest.transform.Find("Label").GetComponent<Text>().text = checkConstellation.constellDatabase[i].krName;
             quest.transform.localPosition = new Vector3(0f, 330 - i * gap, 0f);
             quest.transform.localScale = new Vector3(1, 1, 1);
-            quest.name = checkConstellation.constell_Database[i].name;
+            quest.name = checkConstellation.constellDatabase[i].name;
 
             int index = i;
-            string name = checkConstellation.constell_Database[i].krName;
+            string name = checkConstellation.constellDatabase[i].krName;
             quest.transform.Find("Label").GetComponent<Button>().onClick.AddListener(() => ConstellBtn(index, name));
             quest.transform.Find("Background").GetComponent<Button>().onClick.AddListener(() => ConstellBtn(index, name));
 
-            quest.isOn = checkConstellation.constell_Database[i].check; 
+            quest.isOn = checkConstellation.constellDatabase[i].check; 
             quest.interactable = false;
 
             questList.Add(quest);

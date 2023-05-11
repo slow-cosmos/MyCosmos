@@ -2,7 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StarSpawner : StarDatabase
+public struct StarInfo
+{
+    public string name;
+    public int id;
+    public float ra, dec, mag;
+    public StarInfo(int id, string name, float ra, float dec, float mag)
+    {
+        this.id = id;
+        this.name = name;
+        this.ra = ra;
+        this.dec = dec;
+        this.mag = mag;
+    }
+}
+
+public class StarSpawner : MonoBehaviour
 {
     public GameObject star;
     GameObject Instance;
@@ -15,6 +30,23 @@ public class StarSpawner : StarDatabase
 
     public float lst;
     float lat = 37.582474f;
+
+    public List<StarInfo> starDatabase = new List<StarInfo>();
+
+    void Awake()
+    {
+        List<Dictionary<string, object>> data = CSVReader.Read("hygdata_v3");
+
+        for (var i = 0; i < data.Count; i++)
+        {
+            starDatabase.Add(new StarInfo(
+                int.Parse(data[i]["id"].ToString()),
+                data[i]["proper"].ToString(),
+                float.Parse(data[i]["ra"].ToString()),
+                float.Parse(data[i]["dec"].ToString()),
+                float.Parse(data[i]["mag"].ToString())));
+        }
+    }
 
     void Start()
     {
@@ -34,22 +66,22 @@ public class StarSpawner : StarDatabase
         
         for (int i = 0; i < maxStar; i++)
         {
-            EquatorialToHorizontal(star_Database[i].ra, star_Database[i].dec,lst,ref alt, ref az);
+            EquatorialToHorizontal(starDatabase[i].ra, starDatabase[i].dec,lst,ref alt, ref az);
             SphericalToCartesian(az * Mathf.Deg2Rad, alt * Mathf.Deg2Rad, r, ref x, ref y, ref z);
 
             // 지평선 아래는 생성하지 않게
             if (y < 0) continue;
 
-            float startSize = size * Mathf.Min(7.0f, (-11 / 9) * star_Database[i].mag + (21 / 3));
+            float startSize = size * Mathf.Min(7.0f, (-11 / 9) * starDatabase[i].mag + (21 / 3));
             Instance = Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
             Instance.transform.localScale = new Vector3(startSize,startSize,startSize);
 
-            Instance.name = star_Database[i].name;
+            Instance.name = starDatabase[i].name;
             Instance.transform.parent = GameObject.Find("StarGroup").transform;
-            Instance.GetComponent<Star>().index = star_Database[i].id;
+            Instance.GetComponent<Star>().index = starDatabase[i].id;
             
             //Debug.Log(sdb.star_Database[i].name + ":" + sdb.star_Database[i].ra + " " + sdb.star_Database[i].dec + " az "+ az + " alt " + alt);
-            if (i == maxStar - 1) Debug.Log("마지막 mag: "+star_Database[i].mag);
+            if (i == maxStar - 1) Debug.Log("마지막 mag: "+starDatabase[i].mag);
         }
     }
 
@@ -67,7 +99,7 @@ public class StarSpawner : StarDatabase
     }
 
     //지평좌표계 -> x,y,z
-    void SphericalToCartesian (float az, float alt, float r, ref float x, ref float y, ref float z)
+    void SphericalToCartesian(float az, float alt, float r, ref float x, ref float y, ref float z)
     {
         alt = (Mathf.PI / 2) - alt;
         var rr = r * Mathf.Sin(alt);

@@ -18,21 +18,21 @@ public class Cheat : MonoBehaviour
 #if UNITY_EDITOR
         if(Input.GetKey(KeyCode.T))
         {
-            for(int i=0;i<checkConstellation.constell_Database.Length;i++)
+            for(int i=0;i<checkConstellation.constellDatabase.Length;i++)
             {
-                for(int j=0;j<checkConstellation.constell_Database[i].construction.Count;j++)
+                for(int j=0;j<checkConstellation.constellDatabase[i].construction.Count;j++)
                 {
                     string star1="", star2="";
                     bool check = false;
-                    for (int k = 0; k < checkConstellation.constell_Database[i].construction[j].Length; k++)
+                    for (int k = 0; k < checkConstellation.constellDatabase[i].construction[j].Length; k++)
                     {
-                        if (checkConstellation.constell_Database[i].construction[j][k] != '-' && check == false)
+                        if (checkConstellation.constellDatabase[i].construction[j][k] != '-' && check == false)
                         {
-                            star1 += checkConstellation.constell_Database[i].construction[j][k];
+                            star1 += checkConstellation.constellDatabase[i].construction[j][k];
                         }
-                        else if (checkConstellation.constell_Database[i].construction[j][k] != '-' && check == true)
+                        else if (checkConstellation.constellDatabase[i].construction[j][k] != '-' && check == true)
                         {
-                            star2 += checkConstellation.constell_Database[i].construction[j][k];
+                            star2 += checkConstellation.constellDatabase[i].construction[j][k];
                         }
                         else
                         {

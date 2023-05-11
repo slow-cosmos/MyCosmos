@@ -22,9 +22,9 @@ public class ClearManage : MonoBehaviour
     void CheckChapterClear()
     {
         bool check = true;
-        for (int i = 0; i < checkConstellation.constell_Database.Length; i++)
+        for (int i = 0; i < checkConstellation.constellDatabase.Length; i++)
         {
-            if(checkConstellation.constell_Database[i].check==false) check = false;
+            if(checkConstellation.constellDatabase[i].check==false) check = false;
         }
         if(check)
         {

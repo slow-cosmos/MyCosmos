@@ -111,22 +111,22 @@ public class ConnectStar : MonoBehaviour
     public void MakeConstellation()
     {
         checkConstellation = GameObject.Find("CheckConstellation").GetComponent<CheckConstellation>();
-        for(int i=0;i<checkConstellation.constell_Database.Length;i++)
+        for(int i=0;i<checkConstellation.constellDatabase.Length;i++)
         {
-            if(checkConstellation.constell_Database[i].check == false) continue;
-            for(int j=0;j<checkConstellation.constell_Database[i].construction.Count;j++)
+            if(checkConstellation.constellDatabase[i].check == false) continue;
+            for(int j=0;j<checkConstellation.constellDatabase[i].construction.Count;j++)
             {
                 string star1="", star2="";
                 bool check = false;
-                for (int k = 0; k < checkConstellation.constell_Database[i].construction[j].Length; k++)
+                for (int k = 0; k < checkConstellation.constellDatabase[i].construction[j].Length; k++)
                 {
-                    if (checkConstellation.constell_Database[i].construction[j][k] != '-' && check == false)
+                    if (checkConstellation.constellDatabase[i].construction[j][k] != '-' && check == false)
                     {
-                        star1 += checkConstellation.constell_Database[i].construction[j][k];
+                        star1 += checkConstellation.constellDatabase[i].construction[j][k];
                     }
-                    else if (checkConstellation.constell_Database[i].construction[j][k] != '-' && check == true)
+                    else if (checkConstellation.constellDatabase[i].construction[j][k] != '-' && check == true)
                     {
-                        star2 += checkConstellation.constell_Database[i].construction[j][k];
+                        star2 += checkConstellation.constellDatabase[i].construction[j][k];
                     }
                     else
                     {
@@ -139,7 +139,7 @@ public class ConnectStar : MonoBehaviour
                 LineSpawner(star1Obj, star2Obj, false);
 
                 //찾은 별자리는 클릭해도 선 안 없어지게
-                Destroy(GameObject.Find(checkConstellation.constell_Database[i].construction[j]).transform.GetChild(0).gameObject.GetComponent<BoxCollider>());
+                Destroy(GameObject.Find(checkConstellation.constellDatabase[i].construction[j]).transform.GetChild(0).gameObject.GetComponent<BoxCollider>());
             }
         }
     }
