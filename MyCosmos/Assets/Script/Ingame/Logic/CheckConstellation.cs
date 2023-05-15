@@ -12,7 +12,7 @@ public class CheckConstellation : ConstellationDatabase
     [SerializeField]
     Text constellText;
 
-    public constellationInfo[] constellDatabase; // 현재 찾아야 할 별자리 데이터베이스
+    public ConstellationInfo[] constellDatabase; // 현재 찾아야 할 별자리 데이터베이스
 
     bool check;
 
