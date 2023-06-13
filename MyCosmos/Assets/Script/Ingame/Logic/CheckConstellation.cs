@@ -24,16 +24,16 @@ public class CheckConstellation : ConstellationDatabase
         //챕터별 별자리
         switch (ChapterManage.Instance.chapter) 
         {
-            case "spring":
+            case Chapter.Spring:
                 constellDatabase = base.springConstell;
                 break;
-            case "summer":
+            case Chapter.Summer:
                 constellDatabase = base.summerConstell;
                 break;
-            case "autumn":
+            case Chapter.Autumn:
                 constellDatabase = base.autumnConstell;
                 break;
-            case "winter":
+            case Chapter.Winter:
                 constellDatabase = base.winterConstell;
                 break;
         }
@@ -51,6 +51,7 @@ public class CheckConstellation : ConstellationDatabase
             {
                 GameObject temp;
                 temp = GameObject.Find(constellDatabase[i].construction[j]);
+
                 if (temp)
                 {
                     check = true;

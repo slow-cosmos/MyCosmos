@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Chapter
+{
+    Spring,
+    Summer,
+    Autumn,
+    Winter
+}
+
 public class ChapterManage : MonoBehaviour
 {
     private static ChapterManage instance;
     
     public float lst;
-    public string chapter;
+    public Chapter chapter;
 
     public bool[] chapterClear = new bool[4];
 

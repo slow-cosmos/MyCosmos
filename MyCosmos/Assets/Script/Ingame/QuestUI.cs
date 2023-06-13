@@ -35,7 +35,7 @@ public class QuestUI : MonoBehaviour
 
     public float gap = 60;
 
-    string season;
+    Chapter season;
 
     void Start()
     {
@@ -107,19 +107,19 @@ public class QuestUI : MonoBehaviour
 
         switch (season)
         {
-            case "spring":
+            case Chapter.Spring:
                 constellImage.sprite = springSprites[index];
                 constellDir.text = sprConInfo[index];
                 break;
-            case "summer":
+            case Chapter.Summer:
                 constellImage.sprite = summerSprites[index];
                 constellDir.text = sumConInfo[index];
                 break;
-            case "autumn":
+            case Chapter.Autumn:
                 constellImage.sprite = autumnSprites[index];
                 constellDir.text = autConInfo[index];
                 break;
-            case "winter":
+            case Chapter.Winter:
                 constellImage.sprite = winterSprites[index];
                 constellDir.text = winConInfo[index];
                 break;
@@ -129,26 +129,26 @@ public class QuestUI : MonoBehaviour
     }
 
     // 전체 별자리 탭
-    void Tab2Init(string season)
+    void Tab2Init(Chapter season)
     {
         switch(season)
         {
-            case "spring":
+            case Chapter.Spring:
                 seasonName.text = "봄철 별자리";
                 skyImage.sprite = skySprites[0];
                 zoomSkyImage.sprite = skySprites[0];
                 break;
-            case "summer":
+            case Chapter.Summer:
                 seasonName.text = "여름철 별자리";
                 skyImage.sprite = skySprites[1];
                 zoomSkyImage.sprite = skySprites[0];
                 break;
-            case "autumn":
+            case Chapter.Autumn:
                 seasonName.text = "가을철 별자리";
                 skyImage.sprite = skySprites[2];
                 zoomSkyImage.sprite = skySprites[0];
                 break;
-            case "winter":
+            case Chapter.Winter:
                 seasonName.text = "겨울철 별자리";
                 skyImage.sprite = skySprites[3];
                 zoomSkyImage.sprite = skySprites[0];

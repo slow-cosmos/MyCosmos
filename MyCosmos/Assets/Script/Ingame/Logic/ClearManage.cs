@@ -30,16 +30,16 @@ public class ClearManage : MonoBehaviour
         {
             switch(ChapterManage.Instance.chapter)
             {
-                case "spring":
+                case Chapter.Spring:
                     ChapterManage.Instance.chapterClear[0] = true;
                     break;
-                case "summer":
+                case Chapter.Summer:
                     ChapterManage.Instance.chapterClear[1] = true;
                     break;
-                case "autumn":
+                case Chapter.Autumn:
                     ChapterManage.Instance.chapterClear[2] = true;
                     break;
-                case "winter":
+                case Chapter.Winter:
                     ChapterManage.Instance.chapterClear[3] = true;
                     break;
             }
