@@ -4,51 +4,46 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UIButton : MonoBehaviour
+public class ButtonManager : MonoBehaviour
 {
-    [SerializeField]
-    Canvas questCanvas;
+    [SerializeField] private CameraController cameraController;
+    [SerializeField] private Canvas questCanvas;
 
-    [SerializeField]
-    Button previousButton, lobbyButton, questButton;
+    [SerializeField] private Button previousButton;
+    [SerializeField] private Button lobbyButton;
+    [SerializeField] private Button questButton;
 
-    [SerializeField]
-    GameObject questGroup;
+    [SerializeField] private GameObject starSelect;
+    [SerializeField] private GameObject questGroup;
+    [SerializeField] private GameObject questTab;
+    [SerializeField] private GameObject mapTab;
+    [SerializeField] private GameObject info;
 
-    [SerializeField]
-    GameObject info;
-
-    [SerializeField]
-    Image skyImage;
-
-    [SerializeField]
-    GameObject starSelect;
-
-    public void CloseBtn()
+    public void CloseButton()
     {
         questCanvas.gameObject.SetActive(false);
         lobbyButton.gameObject.SetActive(true);
         questButton.gameObject.SetActive(true);
         starSelect.gameObject.SetActive(true);
 
-        GameObject.Find("Main Camera").GetComponent<CameraController>().enabled=true;
+        cameraController.IsEnabled = true;
 
         SoundManage.Instance.PlayButtonSound();
     }
 
-    public void QuestBtn()
+    public void QuestButton()
     {
         questCanvas.gameObject.SetActive(true);
         lobbyButton.gameObject.SetActive(false);
         questButton.gameObject.SetActive(false);
         starSelect.gameObject.SetActive(false);
 
-        GameObject.Find("Main Camera").GetComponent<CameraController>().enabled=false;
+        cameraController.IsEnabled = false;
 
         SoundManage.Instance.PlayButtonSound();
     }
 
-    public void LobbyBtn()
+    public void LobbyButton()
     {
         DataManage.Instance.SaveGameData();
         
@@ -57,7 +52,7 @@ public class UIButton : MonoBehaviour
         SoundManage.Instance.PlayButtonSound();
     }
 
-    public void PreviousBtn()
+    public void PreviousButton()
     {
         questGroup.gameObject.SetActive(true);
         previousButton.gameObject.SetActive(false);
@@ -66,18 +61,18 @@ public class UIButton : MonoBehaviour
         SoundManage.Instance.PlayButtonSound();
     }
 
-    public void Tab1()
+    public void QuestTabButton()
     {
-        GameObject.Find("QuestCanvas").transform.Find("Tab1Group").gameObject.SetActive(true);
-        GameObject.Find("QuestCanvas").transform.Find("Tab2Group").gameObject.SetActive(false);
+        questTab.SetActive(true);
+        mapTab.SetActive(false);
 
         SoundManage.Instance.PlayButtonSound();
     }
 
-    public void Tab2()
+    public void MapTabButton()
     {
-        GameObject.Find("QuestCanvas").transform.Find("Tab2Group").gameObject.SetActive(true);
-        GameObject.Find("QuestCanvas").transform.Find("Tab1Group").gameObject.SetActive(false);
+        questTab.SetActive(false);
+        mapTab.SetActive(true);
 
         SoundManage.Instance.PlayButtonSound();
     }

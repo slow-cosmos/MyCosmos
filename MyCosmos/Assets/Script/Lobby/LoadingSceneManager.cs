@@ -25,13 +25,19 @@ public class LoadingSceneManager : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        yield return null;
-
         AsyncOperation op = SceneManager.LoadSceneAsync(nextScene);
         op.allowSceneActivation = false;
 
-        dot.DOText("...",1.5f).SetLoops(2,LoopType.Restart).OnComplete(()=>{
+        var tween = dot.DOText("...",1.5f).SetLoops(2,LoopType.Restart).OnComplete(()=>{
             op.allowSceneActivation=true;
         });
+
+        yield return tween.WaitForCompletion();
+
+        while(!op.isDone)
+        {
+            var tween2 = dot.DOText("...",1.5f).SetLoops(1,LoopType.Restart);
+            yield return tween2.WaitForCompletion();
+        }
     }
 }

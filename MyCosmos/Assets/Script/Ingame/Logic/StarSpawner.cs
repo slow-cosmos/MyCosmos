@@ -2,58 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public struct StarInfo
-{
-    public string name;
-    public int id;
-    public float ra, dec, mag;
-    public StarInfo(int id, string name, float ra, float dec, float mag)
-    {
-        this.id = id;
-        this.name = name;
-        this.ra = ra;
-        this.dec = dec;
-        this.mag = mag;
-    }
-}
-
 public class StarSpawner : MonoBehaviour
 {
-    public GameObject star;
-    GameObject Instance;
+    [SerializeField] private GameObject starPrefab;
 
-    [SerializeField]
-    int maxStar;
+    [SerializeField] private int maxStarCount = 2000;
 
-    [SerializeField]
-    float size;
+    [SerializeField] private float starSize = 2;
 
-    public float lst;
-    float lat = 37.582474f;
+    [SerializeField] private float lat = 37.582474f; // 위도
 
-    public List<StarInfo> starDatabase = new List<StarInfo>();
+    public List<Dictionary<string, string>> starDatabase;
 
-    void Awake()
+    private void Awake()
     {
-        List<Dictionary<string, object>> data = CSVReader.Read("hygdata_v3");
-
-        for (var i = 0; i < data.Count; i++)
-        {
-            starDatabase.Add(new StarInfo(
-                int.Parse(data[i]["id"].ToString()),
-                data[i]["proper"].ToString(),
-                float.Parse(data[i]["ra"].ToString()),
-                float.Parse(data[i]["dec"].ToString()),
-                float.Parse(data[i]["mag"].ToString())));
-        }
+        starDatabase = CSVReader.Read("hygdata_v3");
     }
 
-    void Start()
+    private void Start()
     {
         Init();
     }
 
-    void Init()
+    private void Init()
     {
         float x = 0.0f;
         float y = 0.0f;
@@ -62,46 +33,63 @@ public class StarSpawner : MonoBehaviour
         float alt = 0.0f;
         float az = 0.0f;
 
-        lst = ChapterManage.Instance.lst;
-        
-        for (int i = 0; i < maxStar; i++)
+        int starCount = 0;
+        for (int i = 0; i < starDatabase.Count && starCount < maxStarCount; i++)
         {
-            EquatorialToHorizontal(starDatabase[i].ra, starDatabase[i].dec,lst,ref alt, ref az);
-            SphericalToCartesian(az * Mathf.Deg2Rad, alt * Mathf.Deg2Rad, r, ref x, ref y, ref z);
+            string name = starDatabase[i]["proper"];
+            int id = int.Parse(starDatabase[i]["id"]);
+            float ra = float.Parse(starDatabase[i]["ra"]); // 적도
+            float dec = float.Parse(starDatabase[i]["dec"]); // 적경
+            float mag = float.Parse(starDatabase[i]["mag"]); // 밝기
 
-            // 지평선 아래는 생성하지 않게
+            EquatorialToHorizontal(ref alt, ref az, ra, dec);
+            Debug.Log(alt + ", " + az);
+            SphericalToCartesian(ref x, ref y, ref z, az * Mathf.Deg2Rad, alt * Mathf.Deg2Rad, r);
+
             if (y < 0) continue;
 
-            float startSize = size * Mathf.Min(7.0f, (-11 / 9) * starDatabase[i].mag + (21 / 3));
-            Instance = Instantiate(star, new Vector3(x, y, z), Quaternion.identity);
-            Instance.transform.localScale = new Vector3(startSize,startSize,startSize);
+            float startSize = starSize * Mathf.Min(7.0f, -1.05f * mag + 7.0f);
+            GameObject starInstance = Instantiate(starPrefab, new Vector3(x, y, z), Quaternion.identity);
+            starInstance.transform.localScale = new Vector3(startSize, startSize, startSize);
 
-            Instance.name = starDatabase[i].name;
-            Instance.transform.parent = GameObject.Find("StarGroup").transform;
-            Instance.GetComponent<Star>().index = starDatabase[i].id;
-            
-            //Debug.Log(sdb.star_Database[i].name + ":" + sdb.star_Database[i].ra + " " + sdb.star_Database[i].dec + " az "+ az + " alt " + alt);
-            if (i == maxStar - 1) Debug.Log("마지막 mag: "+starDatabase[i].mag);
+            starInstance.name = name;
+            starInstance.transform.parent = GameObject.Find("StarGroup").transform;
+            starInstance.GetComponent<Star>().index = id;
+
+            starCount++;
         }
     }
 
-    //적도좌표계 -> 지평좌표계
-    void EquatorialToHorizontal(float ra, float dec, float lst, ref float alt, ref float az)
+    // 적도 좌표계(적경, 적위) -> 천구(구면) 좌표계(고도, 방위각)
+    private void EquatorialToHorizontal(ref float alt, ref float az, float ra, float dec)
     {
-        float ha = (lst - ra)*15%360;
+        /*
+        ra : hour
+        dec : -90 ~ +90
+        lat : -90 ~ +90
+        LST : hour
+        az : -180 ~ 180 // TODO: 다시 확인, 0~360이 나와야함
+        alt : -90 ~ +90
+        HA : 0 ~ 360
+        */
 
-        alt = Mathf.Rad2Deg*(Mathf.Asin(Mathf.Sin(Mathf.Deg2Rad*dec) * Mathf.Sin(Mathf.Deg2Rad*lat) +
-            Mathf.Cos(Mathf.Deg2Rad*dec) * Mathf.Cos(Mathf.Deg2Rad*lat) * Mathf.Cos(Mathf.Deg2Rad*ha)));
+        float LST = ChapterManage.Instance.lst;
+        float HA = (LST - ra) * 15 % 360;
 
-        az = Mathf.Rad2Deg*(Mathf.Atan2(-Mathf.Cos(Mathf.Deg2Rad*dec)*Mathf.Sin(Mathf.Deg2Rad*ha),
-            Mathf.Sin(Mathf.Deg2Rad*dec)*Mathf.Cos(Mathf.Deg2Rad*lat)-
-            Mathf.Cos(Mathf.Deg2Rad*dec)*Mathf.Sin(Mathf.Deg2Rad*lat)*Mathf.Cos(Mathf.Deg2Rad*ha)));
+        // 고도
+        alt = Mathf.Rad2Deg * (Mathf.Asin(Mathf.Sin(dec * Mathf.Deg2Rad) * Mathf.Sin(lat * Mathf.Deg2Rad) +
+            Mathf.Cos(dec * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad) * Mathf.Cos(HA * Mathf.Deg2Rad)));
+
+        // 방위각
+        az = Mathf.Rad2Deg * Mathf.Atan2(Mathf.Sin(HA * Mathf.Deg2Rad),
+            Mathf.Cos(HA * Mathf.Deg2Rad) * Mathf.Sin(lat * Mathf.Deg2Rad) -
+            Mathf.Tan(dec * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad));
     }
 
-    //지평좌표계 -> x,y,z
-    void SphericalToCartesian(float az, float alt, float r, ref float x, ref float y, ref float z)
+    // 구면 좌표계(고도, 방위각) -> 직교 좌표계(x, y, z)
+    private void SphericalToCartesian(ref float x, ref float y, ref float z, float az, float alt, float r)
     {
-        alt = (Mathf.PI / 2) - alt;
+        alt = 90 - alt; // 위에서 아래로 값이 증가하게
         var rr = r * Mathf.Sin(alt);
         z = rr * Mathf.Cos(az);
         x = rr * Mathf.Sin(az);

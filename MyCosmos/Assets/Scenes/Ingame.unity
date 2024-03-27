@@ -304,6 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotSpeed: 150
   zoomSpeed: 30
+  camera: {fileID: 88074037}
   selectCircle: {fileID: 138757110}
 --- !u!114 &88074040
 MonoBehaviour:
@@ -482,7 +483,6 @@ GameObject:
   - component: {fileID: 218745126}
   - component: {fileID: 218745125}
   - component: {fileID: 218745124}
-  - component: {fileID: 218745123}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -510,26 +510,6 @@ RectTransform:
   m_AnchoredPosition: {x: 275, y: 367}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &218745123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218745121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCanvas: {fileID: 1406020223}
-  previousButton: {fileID: 393576971}
-  lobbyButton: {fileID: 1724375037}
-  questButton: {fileID: 966993060}
-  questGroup: {fileID: 1115441953}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
-  starSelect: {fileID: 1935054464}
 --- !u!114 &218745124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,9 +554,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 218745123}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: CloseBtn
+      - m_Target: {fileID: 1293983952}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: CloseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -923,7 +903,6 @@ GameObject:
   - component: {fileID: 393576973}
   - component: {fileID: 393576972}
   - component: {fileID: 393576971}
-  - component: {fileID: 393576970}
   m_Layer: 5
   m_Name: PreviousButton
   m_TagString: Untagged
@@ -951,26 +930,6 @@ RectTransform:
   m_AnchoredPosition: {x: -275, y: 367}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &393576970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 393576968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCanvas: {fileID: 1406020223}
-  previousButton: {fileID: 393576971}
-  lobbyButton: {fileID: 0}
-  questButton: {fileID: 0}
-  questGroup: {fileID: 1115441953}
-  info: {fileID: 1759530110}
-  skyImage: {fileID: 0}
-  starSelect: {fileID: 0}
 --- !u!114 &393576971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,9 +974,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 393576970}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: PreviousBtn
+      - m_Target: {fileID: 1293983952}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: PreviousButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1364,14 +1323,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 0}
   questCanvas: {fileID: 0}
   previousButton: {fileID: 0}
   lobbyButton: {fileID: 0}
   questButton: {fileID: 0}
-  questGroup: {fileID: 0}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
   starSelect: {fileID: 0}
+  questGroup: {fileID: 0}
+  questTab: {fileID: 0}
+  mapTab: {fileID: 0}
+  info: {fileID: 0}
 --- !u!114 &529761298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,14 +1548,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraController: {fileID: 0}
   questCanvas: {fileID: 1406020223}
   previousButton: {fileID: 393576971}
   lobbyButton: {fileID: 1724375037}
   questButton: {fileID: 966993060}
-  questGroup: {fileID: 1115441953}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
   starSelect: {fileID: 1935054464}
+  questGroup: {fileID: 0}
+  questTab: {fileID: 0}
+  mapTab: {fileID: 0}
+  info: {fileID: 0}
 --- !u!114 &599090893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,9 +1707,8 @@ GameObject:
   - component: {fileID: 827063106}
   - component: {fileID: 827063105}
   - component: {fileID: 827063104}
-  - component: {fileID: 827063107}
   m_Layer: 5
-  m_Name: Tab1
+  m_Name: QuestTabButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1820,9 +1782,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 827063107}
-        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
-        m_MethodName: Tab1
+      - m_Target: {fileID: 1293983952}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: QuestTabButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1871,26 +1833,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 827063102}
   m_CullTransparentMesh: 0
---- !u!114 &827063107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827063102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCanvas: {fileID: 0}
-  previousButton: {fileID: 0}
-  lobbyButton: {fileID: 0}
-  questButton: {fileID: 0}
-  questGroup: {fileID: 0}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
-  starSelect: {fileID: 0}
 --- !u!1 &839191179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,9 +2093,8 @@ GameObject:
   - component: {fileID: 887105663}
   - component: {fileID: 887105662}
   - component: {fileID: 887105661}
-  - component: {fileID: 887105664}
   m_Layer: 5
-  m_Name: Tab2
+  m_Name: MapTabButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2227,9 +2168,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 887105664}
-        m_TargetAssemblyTypeName: UIButton, Assembly-CSharp
-        m_MethodName: Tab2
+      - m_Target: {fileID: 1293983952}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: MapTabButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2278,26 +2219,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887105659}
   m_CullTransparentMesh: 0
---- !u!114 &887105664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 887105659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCanvas: {fileID: 0}
-  previousButton: {fileID: 0}
-  lobbyButton: {fileID: 0}
-  questButton: {fileID: 0}
-  questGroup: {fileID: 0}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
-  starSelect: {fileID: 0}
 --- !u!1 &908188881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,7 +2351,6 @@ GameObject:
   - component: {fileID: 966993062}
   - component: {fileID: 966993061}
   - component: {fileID: 966993060}
-  - component: {fileID: 966993059}
   - component: {fileID: 966993063}
   - component: {fileID: 966993064}
   m_Layer: 5
@@ -2461,26 +2381,6 @@ RectTransform:
   m_AnchoredPosition: {x: -75, y: 74}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &966993059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966993057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCanvas: {fileID: 1406020223}
-  previousButton: {fileID: 393576971}
-  lobbyButton: {fileID: 1724375037}
-  questButton: {fileID: 966993060}
-  questGroup: {fileID: 1115441953}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
-  starSelect: {fileID: 1935054464}
 --- !u!114 &966993060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2525,9 +2425,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 966993059}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: QuestBtn
+      - m_Target: {fileID: 1293983952}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: QuestButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3073,7 +2973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115441954}
   m_Layer: 5
-  m_Name: Quest
+  m_Name: QuestGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3111,7 +3011,7 @@ GameObject:
   - component: {fileID: 1119602824}
   - component: {fileID: 1119602823}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3233,7 +3133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1196431740}
   m_Layer: 5
-  m_Name: Tab1Group
+  m_Name: QuestTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3422,6 +3322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c7e588241ac1544aa076522ff9b3e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
 --- !u!1 &1266438238
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,6 +3415,7 @@ GameObject:
   - component: {fileID: 1293983950}
   - component: {fileID: 1293983949}
   - component: {fileID: 1293983948}
+  - component: {fileID: 1293983952}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -3606,6 +3508,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1293983952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293983947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraController: {fileID: 88074039}
+  questCanvas: {fileID: 1406020223}
+  previousButton: {fileID: 393576971}
+  lobbyButton: {fileID: 1724375037}
+  questButton: {fileID: 966993060}
+  starSelect: {fileID: 138757110}
+  questGroup: {fileID: 1115441953}
+  questTab: {fileID: 1196431739}
+  mapTab: {fileID: 1999577699}
+  info: {fileID: 1759530110}
 --- !u!1 &1349270061
 GameObject:
   m_ObjectHideFlags: 0
@@ -4200,7 +4124,6 @@ GameObject:
   - component: {fileID: 1724375039}
   - component: {fileID: 1724375038}
   - component: {fileID: 1724375037}
-  - component: {fileID: 1724375036}
   - component: {fileID: 1724375040}
   m_Layer: 5
   m_Name: LobbyButton
@@ -4230,26 +4153,6 @@ RectTransform:
   m_AnchoredPosition: {x: 75, y: 74}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1724375036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724375034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e5aaf576f8924c8a38345202c659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questCanvas: {fileID: 1406020223}
-  previousButton: {fileID: 0}
-  lobbyButton: {fileID: 0}
-  questButton: {fileID: 0}
-  questGroup: {fileID: 0}
-  info: {fileID: 0}
-  skyImage: {fileID: 0}
-  starSelect: {fileID: 0}
 --- !u!114 &1724375037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4294,9 +4197,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1724375036}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LobbyBtn
+      - m_Target: {fileID: 1293983952}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: LobbyButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4434,10 +4337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10afece6cf52556479a06d18711ebb4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star: {fileID: 120841600683821698, guid: abf4f6b3bcd8dcb4f88052cbd1bd73c9, type: 3}
-  maxStar: 4000
-  size: 1.5
-  lst: 0
+  starPrefab: {fileID: 120841600683821698, guid: abf4f6b3bcd8dcb4f88052cbd1bd73c9,
+    type: 3}
+  maxStarCount: 2000
+  starSize: 2
+  lat: 37.582474
 --- !u!4 &1752443878
 Transform:
   m_ObjectHideFlags: 0
@@ -4463,7 +4367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759530111}
   m_Layer: 5
-  m_Name: ConstellInfo
+  m_Name: ConstellationInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4504,7 +4408,7 @@ GameObject:
   - component: {fileID: 1806258665}
   - component: {fileID: 1806258664}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4993,7 +4897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999577700}
   m_Layer: 5
-  m_Name: Tab2Group
+  m_Name: MapTab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5069,13 +4973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e819ac563572c4face71e20b7f682c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constellName: {fileID: 1119602823}
-  constellDir: {fileID: 1806258664}
-  clear: {fileID: 362430361}
-  seasonName: {fileID: 1024222190}
-  skyImage: {fileID: 839191181}
-  zoomSkyImage: {fileID: 1226902166}
-  constellImage: {fileID: 1388352990}
   skySprites:
   - {fileID: 21300000, guid: cffe5cbb769721c4687cb6ca6abc4c5c, type: 3}
   - {fileID: 21300000, guid: 878461e2e8e48ce48a65a4788f1b9c91, type: 3}
@@ -5262,8 +5159,16 @@ MonoBehaviour:
     \uB744\uC9C0 \uC54A\uB294 \uBE44\uAD50\uC801 \uC791\uC740 \uBCC4\uC790\uB9AC\uC774\uB2E4."
   togglePrefab: {fileID: 7142164202282157812, guid: b6276b7dc4a5234409081398fc7865e3,
     type: 3}
+  constellName: {fileID: 1119602823}
+  constellDescription: {fileID: 1806258664}
+  seasonName: {fileID: 1024222190}
+  skyImage: {fileID: 839191181}
+  zoomSkyImage: {fileID: 1226902166}
+  constellImage: {fileID: 1388352990}
   questGroup: {fileID: 1115441953}
-  checkConstellation: {fileID: 0}
+  previousButton: {fileID: 393576968}
+  constellationInfo: {fileID: 1759530110}
+  checkConstellation: {fileID: 1432792637}
   gap: 70
 --- !u!1 &2035481175
 GameObject:

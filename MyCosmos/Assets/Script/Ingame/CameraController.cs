@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float rotSpeed = 1;
-    public float zoomSpeed = 10;
+    [SerializeField] private float rotSpeed = 1;
+    [SerializeField] private float zoomSpeed = 10;
+
+    [SerializeField] private Camera camera;
+    
+    [SerializeField] private GameObject selectCircle;
 
     private float rx, ry;
-    private Camera camera;
-    
-    [SerializeField]
-    GameObject selectCircle;
+
+    private bool isEnabled = true;
+    public bool IsEnabled
+    {
+        set
+        {
+            isEnabled = value;
+        }
+    }
 
     void Awake()
     {
@@ -22,14 +31,9 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        camera = gameObject.GetComponent<Camera>();
-    }
-
     void Update()
     {
-        if(GameManage.Instance.gameState == GameState.PLAY)
+        if(isEnabled && GameManage.Instance.gameState == GameState.PLAY)
         {
             Rotate();
             Zoom();
